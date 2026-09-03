@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: quality-eval-system
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SERVER_PORT
+        value: "3000"
+      - key: SERVER_HOST
+        value: 0.0.0.0
+      - key: DATABASE_URL
+        fromDatabase:
+          name: quality-eval-db
+          property: connectionString
+    healthCheckPath: /api/auth/login
+    autoDeploy: true
+
+databases:
+  - name: quality-eval-db
+    plan: free
+    databaseName: quality_eval
+    user: quality_eval_user
+    ipAllowList: []

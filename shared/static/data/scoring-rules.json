@@ -1,0 +1,1552 @@
+[
+  {
+    "itemKey": "ideological-politics",
+    "itemName": "思想政治",
+    "itemMaxScore": 10,
+    "type": "positive",
+    "projects": [
+      {
+        "projectKey": "excellent-party-member",
+        "projectName": "优秀共产党员",
+        "remark": "个人荣誉，按最高荣誉或最高级别加分，不叠加。",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "provincial-above",
+            "levelName": "省级及以上",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 8.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "school",
+            "levelName": "校级",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 6.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "college",
+            "levelName": "院级",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "excellent-cadre",
+        "projectName": "优秀共青团干部、优秀学生干部、三好学生",
+        "remark": "",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "provincial-above",
+            "levelName": "省级及以上",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 7.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "school",
+            "levelName": "校级",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "college",
+            "levelName": "院级",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 3.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "excellent-league-member",
+        "projectName": "优秀共青团员",
+        "remark": "",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "provincial-above",
+            "levelName": "省级及以上",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 6.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "school",
+            "levelName": "校级",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 4.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "college",
+            "levelName": "院级",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "may-fourth-youth-league-branch",
+        "projectName": "五四红旗团支部",
+        "remark": "集体荣誉，所在集体的全体成员均可加分（处分期内或给集体带来负面影响的成员，经研究后可不予加分）。党支部、团支部、班级的集体荣誉不叠加，宿舍荣誉可与其他集体荣誉叠加。",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "provincial-above",
+            "levelName": "省级及以上",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "school",
+            "levelName": "校级",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 4.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "college",
+            "levelName": "院级",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "civilized-class",
+        "projectName": "文明班级",
+        "remark": "",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "provincial-above",
+            "levelName": "省级及以上",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 4.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "school",
+            "levelName": "校级",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 3.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "college",
+            "levelName": "院级",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "excellent-party-league-branch",
+        "projectName": "考核优秀的党支部、团支部",
+        "remark": "",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "apply-for-party-league",
+        "projectName": "提交入党申请书、入团申请书",
+        "remark": "只加提交申请书当学期。",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 1.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "ideological-contest",
+        "projectName": "积极参加“万‘马'奔腾”等思政类比赛",
+        "remark": "比赛项目经学院认定后予以加分。比赛获奖的，按照相应奖项和级别可叠加。",
+        "type": "positive",
+        "repeatable": true,
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "ideological-paper",
+        "projectName": "发表思政类论文",
+        "remark": "分值说明：一作：+5\n二作：+3。须有指导老师，只加到第二作者（第一作者为老师的可顺延）。刊物若符合期刊分类的，按照分类加分。",
+        "type": "positive",
+        "repeatable": true,
+        "levelGroups": [
+          {
+            "levelKey": "cnki",
+            "levelName": "可“中国知网”可检索",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "ordinary-cn",
+            "levelName": "普通CN期刊",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 3.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "ideological-basic",
+        "projectName": "思想端正，政治立场坚定等",
+        "remark": "无思想政治相关问题，给与基础分3分。",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 3.0, "needProof": false }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "squadron-contribution",
+        "projectName": "对中队做出大贡献的",
+        "remark": "需有导员认定。",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "illegal-website",
+        "projectName": "非法浏览境外网站、发表（参与）不当言论等行为",
+        "remark": "以学院、学校等的通报的名单为准。可按次数累计。",
+        "type": "negative",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": false }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "absent-lecture",
+        "projectName": "无故缺席相关讲座、活动等；无故缺席重要活动等",
+        "remark": "",
+        "type": "negative",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 1.0, "needProof": false }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "custom",
+        "projectName": "自定义/待认定",
+        "remark": "",
+        "type": "custom",
+        "isCustom": true,
+        "levelGroups": []
+      }
+    ]
+  },
+  {
+    "itemKey": "moral",
+    "itemName": "道德素养",
+    "itemMaxScore": 5,
+    "type": "positive",
+    "projects": [
+      {
+        "projectKey": "blood-donation",
+        "projectName": "义务献血",
+        "remark": "基础分为2分，不为负分",
+        "type": "positive",
+        "repeatable": true,
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "moral-commendation",
+        "projectName": "在道德素养、学生管理等方面有重大表现的",
+        "remark": "",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "college",
+            "levelName": "院级表彰",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "school-above",
+            "levelName": "校级及以上表彰",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 3.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "forged-certificate",
+        "projectName": "有伪造或出具不实际证明的影响综测评定的",
+        "remark": "",
+        "type": "negative",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "custom",
+        "projectName": "自定义/待认定",
+        "remark": "",
+        "type": "custom",
+        "isCustom": true,
+        "levelGroups": []
+      }
+    ]
+  },
+  {
+    "itemKey": "law-abiding",
+    "itemName": "遵纪守法",
+    "itemMaxScore": 5,
+    "type": "negative",
+    "projects": [
+      {
+        "projectKey": "school-notice-punishment",
+        "projectName": "院、校的通报或处分",
+        "remark": "基础分5分。扣分按次数记，可叠加，不为负分。\n其他经学院学生工作领导小组认定的扣分情形，经评议可适当给予扣分。",
+        "type": "negative",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": false }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "ebike-violation",
+        "projectName": "违反校园电动车管理相关规定",
+        "remark": "",
+        "type": "negative",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": false }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "squadron-notice",
+        "projectName": "中队通报",
+        "remark": "分值说明：第一次：-1\n第二次：-2\n第三次：此项为0分",
+        "type": "negative",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": false }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "custom",
+        "projectName": "自定义/待认定",
+        "remark": "",
+        "type": "custom",
+        "isCustom": true,
+        "levelGroups": []
+      }
+    ]
+  },
+  {
+    "itemKey": "learning-attitude",
+    "itemName": "学习态度",
+    "itemMaxScore": 5,
+    "type": "positive",
+    "projects": [
+      {
+        "projectKey": "learning-attitude-basic",
+        "projectName": "学习态度端正，期末无补考，无旷课、迟到、早退、考试作弊、违规、学术不端等违反学习相关规定的情况。",
+        "remark": "",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": false }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "absent-tardiness",
+        "projectName": "旷课、迟到、早退等行为",
+        "remark": "可按次数累计。",
+        "type": "negative",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "absent", "optionName": "旷课", "score": 1.0, "needProof": false },
+              { "optionKey": "tardiness", "optionName": "迟到、早退", "score": 0.5, "needProof": false }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "miss-study",
+        "projectName": "未按要求参加集中学习",
+        "remark": "",
+        "type": "negative",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 0.5, "needProof": false }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "custom",
+        "projectName": "自定义/待认定",
+        "remark": "",
+        "type": "custom",
+        "isCustom": true,
+        "levelGroups": []
+      }
+    ]
+  },
+  {
+    "itemKey": "innovation",
+    "itemName": "学科创新",
+    "itemMaxScore": 15,
+    "type": "positive",
+    "projects": [
+      {
+        "projectKey": "a-competition",
+        "projectName": "A类学科竞赛",
+        "remark": "1.队长额外+2，若团队超过5人，前30%额外+1；\n2.同一项目参加不同级别比赛，按最高级别加分，不累加；\n3.项目分类，见关于印发《集美大学2025年学科竞赛目录》的通知；\n4.积极参与创新创业、“挑战杯”项目的班级，项目负责人人数各达班级人数80%以上的，项目负责人均可+2；\n5.其他类别竞赛，可参考C类相应级别，经学院认定后适当+1至7分。",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "national",
+            "levelName": "国家级",
+            "options": [
+              { "optionKey": "first", "optionName": "一等奖", "score": 12.0, "needProof": true },
+              { "optionKey": "second", "optionName": "二等奖", "score": 11.0, "needProof": true },
+              { "optionKey": "third", "optionName": "三等奖", "score": 10.0, "needProof": true },
+              { "optionKey": "project-approved", "optionName": "立项结项", "score": 5.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "provincial",
+            "levelName": "省级",
+            "options": [
+              { "optionKey": "first", "optionName": "一等奖", "score": 9.0, "needProof": true },
+              { "optionKey": "second", "optionName": "二等奖", "score": 8.0, "needProof": true },
+              { "optionKey": "third", "optionName": "三等奖", "score": 7.0, "needProof": true },
+              { "optionKey": "participate", "optionName": "代表学院参加未获奖", "score": 2.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "school",
+            "levelName": "校级",
+            "options": [
+              { "optionKey": "first", "optionName": "一等奖", "score": 6.0, "needProof": true },
+              { "optionKey": "second", "optionName": "二等奖", "score": 5.0, "needProof": true },
+              { "optionKey": "third", "optionName": "三等奖", "score": 4.0, "needProof": true },
+              { "optionKey": "project-approved", "optionName": "立项结项", "score": 3.0, "needProof": true },
+              { "optionKey": "participate", "optionName": "参加未获奖", "score": 1.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "college",
+            "levelName": "院级",
+            "options": [
+              { "optionKey": "first", "optionName": "一等奖", "score": 3.0, "needProof": true },
+              { "optionKey": "second", "optionName": "二等奖", "score": 2.0, "needProof": true },
+              { "optionKey": "third", "optionName": "三等奖", "score": 1.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "b-competition",
+        "projectName": "B类学科竞赛",
+        "remark": "同一项目参加不同级别比赛，按最高级别加分，不累加。项目分类，见关于印发《集美大学2025年学科竞赛目录》的通知。",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "national",
+            "levelName": "国家级",
+            "options": [
+              { "optionKey": "first", "optionName": "一等奖", "score": 10.0, "needProof": true },
+              { "optionKey": "second", "optionName": "二等奖", "score": 9.5, "needProof": true },
+              { "optionKey": "third", "optionName": "三等奖", "score": 9.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "provincial",
+            "levelName": "省级",
+            "options": [
+              { "optionKey": "first", "optionName": "一等奖", "score": 6.0, "needProof": true },
+              { "optionKey": "second", "optionName": "二等奖", "score": 5.5, "needProof": true },
+              { "optionKey": "third", "optionName": "三等奖", "score": 5.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "school",
+            "levelName": "校级",
+            "options": [
+              { "optionKey": "first", "optionName": "一等奖", "score": 4.0, "needProof": true },
+              { "optionKey": "second", "optionName": "二等奖", "score": 3.5, "needProof": true },
+              { "optionKey": "third", "optionName": "三等奖", "score": 3.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "college",
+            "levelName": "院级",
+            "options": [
+              { "optionKey": "first", "optionName": "一等奖", "score": 2.5, "needProof": true },
+              { "optionKey": "second", "optionName": "二等奖", "score": 2.0, "needProof": true },
+              { "optionKey": "third", "optionName": "三等奖", "score": 1.5, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "c-competition",
+        "projectName": "C类学科竞赛",
+        "remark": "同一项目参加不同级别比赛，按最高级别加分，不累加。项目分类，见关于印发《集美大学2025年学科竞赛目录》的通知。",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "national",
+            "levelName": "国家级",
+            "options": [
+              { "optionKey": "first", "optionName": "一等奖", "score": 7.0, "needProof": true },
+              { "optionKey": "second", "optionName": "二等奖", "score": 6.5, "needProof": true },
+              { "optionKey": "third", "optionName": "三等奖", "score": 6.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "provincial",
+            "levelName": "省级",
+            "options": [
+              { "optionKey": "first", "optionName": "一等奖", "score": 5.0, "needProof": true },
+              { "optionKey": "second", "optionName": "二等奖", "score": 4.5, "needProof": true },
+              { "optionKey": "third", "optionName": "三等奖", "score": 4.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "school",
+            "levelName": "校级",
+            "options": [
+              { "optionKey": "first", "optionName": "一等奖", "score": 3.0, "needProof": true },
+              { "optionKey": "second", "optionName": "二等奖", "score": 2.5, "needProof": true },
+              { "optionKey": "third", "optionName": "三等奖", "score": 2.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "college",
+            "levelName": "院级",
+            "options": [
+              { "optionKey": "first", "optionName": "一等奖", "score": 2.0, "needProof": true },
+              { "optionKey": "second", "optionName": "二等奖", "score": 1.5, "needProof": true },
+              { "optionKey": "third", "optionName": "三等奖", "score": 1.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "paper-publication",
+        "projectName": "论文发表",
+        "remark": "1.论文第一作者（第一作者为集美大学教师的，第二作者等同第一作者）；其他位次按实际计算，只加到第三作者。\n2.刊物分类参照集美大学刊物分类办法。\n3.其他作者按照“作者位次/作者总数”等比例加分，四舍五入后保留1位小数。",
+        "type": "positive",
+        "repeatable": true,
+        "levelGroups": [
+          {
+            "levelKey": "journal-one",
+            "levelName": "一类学术刊物",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 10.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "journal-two",
+            "levelName": "二类学术刊物",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 8.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "journal-three",
+            "levelName": "三类学术刊物",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 6.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "patent",
+        "projectName": "专利",
+        "remark": "需为第一发明人，均以授权证书为准，申请人所在单位需为集美大学。",
+        "type": "positive",
+        "repeatable": true,
+        "levelGroups": [
+          {
+            "levelKey": "invention",
+            "levelName": "发明专利",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 8.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "academic-misconduct",
+        "projectName": "出现学术不端等情况；因不服从指导老师、通讯作者的管理造成不良影响等情况",
+        "remark": "分值说明：学科创新项为零分",
+        "type": "negative",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 0, "needProof": false }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "custom",
+        "projectName": "自定义/待认定",
+        "remark": "",
+        "type": "custom",
+        "isCustom": true,
+        "levelGroups": []
+      }
+    ]
+  },
+  {
+    "itemKey": "physical-health",
+    "itemName": "体质健康",
+    "itemMaxScore": 5,
+    "type": "negative",
+    "projects": [
+      {
+        "projectKey": "military-morning-roll-call",
+        "projectName": "半军管或早点名、升旗仪式",
+        "remark": "基础分5分。扣分按次数记，可叠加，不为负分。\n其他经学院学生工作领导小组认定的扣分情形，经评议可适当给予扣分。",
+        "type": "negative",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "leave-over-five", "optionName": "请假超五次（公假除外）", "score": 0.5, "needProof": false },
+              { "optionKey": "absent-drill", "optionName": "旷操、旷早点名", "score": 1.0, "needProof": false },
+              { "optionKey": "absent-flag", "optionName": "旷升旗", "score": 2.0, "needProof": false }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "physical-test-fail",
+        "projectName": "体质健康测试未通过",
+        "remark": "",
+        "type": "negative",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": false }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "custom",
+        "projectName": "自定义/待认定",
+        "remark": "",
+        "type": "custom",
+        "isCustom": true,
+        "levelGroups": []
+      }
+    ]
+  },
+  {
+    "itemKey": "sports-activity",
+    "itemName": "体育活动",
+    "itemMaxScore": 15,
+    "type": "positive",
+    "projects": [
+      {
+        "projectKey": "sports-competition",
+        "projectName": "体育竞赛",
+        "remark": "1.参加体育比赛其他名次累计不超过8分；\n2.如破校纪录额外+2，院纪录额外+1；趣味项目加分减半；\n3.市级比赛经学院学生工作领导小组认定给予加分；\n4.比赛项目为团体的，所有成员均加分；\n5.其他可认定的项目，根据相关活动通知执行加分；\n6.所有项目可叠加。",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "city-above",
+            "levelName": "市级及以上",
+            "options": [
+              { "optionKey": "champion", "optionName": "冠军/第一名", "score": 15.0, "needProof": true },
+              { "optionKey": "runner-up", "optionName": "亚军/第二名", "score": 14.0, "needProof": true },
+              { "optionKey": "third-place", "optionName": "季军/第三名", "score": 13.0, "needProof": true },
+              { "optionKey": "fourth-sixth", "optionName": "第四至六名", "score": 12.0, "needProof": true },
+              { "optionKey": "seventh-eighth", "optionName": "第七至八名", "score": 11.0, "needProof": true },
+              { "optionKey": "other", "optionName": "其他名次", "score": 10.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "school",
+            "levelName": "校级",
+            "options": [
+              { "optionKey": "champion", "optionName": "冠军/第一名", "score": 13.0, "needProof": true },
+              { "optionKey": "runner-up", "optionName": "亚军/第二名", "score": 12.0, "needProof": true },
+              { "optionKey": "third-place", "optionName": "季军/第三名", "score": 11.0, "needProof": true },
+              { "optionKey": "fourth-sixth", "optionName": "第四至六名", "score": 8.0, "needProof": true },
+              { "optionKey": "seventh-eighth", "optionName": "第七至八名", "score": 7.0, "needProof": true },
+              { "optionKey": "other", "optionName": "其他名次", "score": 5.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "college",
+            "levelName": "院级",
+            "options": [
+              { "optionKey": "champion", "optionName": "冠军/第一名", "score": 10.0, "needProof": true },
+              { "optionKey": "runner-up", "optionName": "亚军/第二名", "score": 9.0, "needProof": true },
+              { "optionKey": "third-place", "optionName": "季军/第三名", "score": 8.0, "needProof": true },
+              { "optionKey": "fourth-sixth", "optionName": "第四至六名", "score": 6.0, "needProof": true },
+              { "optionKey": "seventh-eighth", "optionName": "第七至八名", "score": 4.0, "needProof": true },
+              { "optionKey": "other", "optionName": "其他名次", "score": 3.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "sports-cheer-manuscript",
+        "projectName": "运动会加油稿撰写",
+        "remark": "分值说明：运动会期间被录用并播报的稿件累计数量最多的前10个班级，投稿成员：+1",
+        "type": "positive",
+        "repeatable": true,
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "individual", "optionName": "个人", "score": 1.0, "needProof": true },
+              { "optionKey": "collective", "optionName": "集体", "score": 10.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "deep-blue-power-club",
+        "projectName": "“深蓝动力社”成员",
+        "remark": "",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "qualified", "optionName": "积极参与训练且考核合格以上", "score": 2.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "abandon-competition",
+        "projectName": "无故放弃比赛",
+        "remark": "",
+        "type": "negative",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "individual", "optionName": "个人", "score": 2.0, "needProof": false }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "custom",
+        "projectName": "自定义/待认定",
+        "remark": "",
+        "type": "custom",
+        "isCustom": true,
+        "levelGroups": []
+      }
+    ]
+  },
+  {
+    "itemKey": "civilized",
+    "itemName": "文明素养",
+    "itemMaxScore": 5,
+    "type": "negative",
+    "projects": [
+      {
+        "projectKey": "appearance",
+        "projectName": "仪容仪表（海上专业）",
+        "remark": "1.基础分5分。扣分按次数记，可叠加，不为负分。\n2.其他经学院学生工作领导小组认定的扣分情形，经评议可适当给予扣分。",
+        "type": "negative",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "violation", "optionName": "着装、头发等不符合半军管规定的情形", "score": 1.0, "needProof": false }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "throwing-cigarette",
+        "projectName": "乱丢烟头导致不良影响的",
+        "remark": "",
+        "type": "negative",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": false }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "etiquette-violation",
+        "projectName": "违反课堂礼仪以、公共礼仪以及其他不文明行为",
+        "remark": "分值说明：1至5",
+        "type": "negative",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": false }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "custom",
+        "projectName": "自定义/待认定",
+        "remark": "",
+        "type": "custom",
+        "isCustom": true,
+        "levelGroups": []
+      }
+    ]
+  },
+  {
+    "itemKey": "art-practice",
+    "itemName": "文艺实践",
+    "itemMaxScore": 15,
+    "type": "positive",
+    "projects": [
+      {
+        "projectKey": "art-competition",
+        "projectName": "文艺比赛",
+        "remark": "1.参加文艺比赛其他名次、积极参加活动的，累计不超过8分；\n2.市级比赛经学院学生工作领导小组认定给予加分；\n3.比赛项目为团体的，所有成员均加分；\n4.其他可认定的项目，根据相关活动通知执行加分；\n5.视频拍摄、演讲比赛、团体操比赛、啦啦操比赛的活动，经学院学生工作领导小组认定给予加分；\n6.所有项目可叠加。",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "city-above",
+            "levelName": "市级及以上",
+            "options": [
+              { "optionKey": "champion", "optionName": "冠军/第一名", "score": 15.0, "needProof": true },
+              { "optionKey": "runner-up", "optionName": "亚军/第二名", "score": 14.0, "needProof": true },
+              { "optionKey": "third-place", "optionName": "季军/第三名", "score": 13.0, "needProof": true },
+              { "optionKey": "fourth-sixth", "optionName": "第四至六名", "score": 12.0, "needProof": true },
+              { "optionKey": "seventh-eighth", "optionName": "第七至八名", "score": 11.0, "needProof": true },
+              { "optionKey": "other", "optionName": "其他名次", "score": 10.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "school",
+            "levelName": "校级",
+            "options": [
+              { "optionKey": "champion", "optionName": "冠军/第一名", "score": 13.0, "needProof": true },
+              { "optionKey": "runner-up", "optionName": "亚军/第二名", "score": 12.0, "needProof": true },
+              { "optionKey": "third-place", "optionName": "季军/第三名", "score": 11.0, "needProof": true },
+              { "optionKey": "fourth-sixth", "optionName": "第四至六名", "score": 8.0, "needProof": true },
+              { "optionKey": "seventh-eighth", "optionName": "第七至八名", "score": 7.0, "needProof": true },
+              { "optionKey": "other", "optionName": "其他名次", "score": 5.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "college",
+            "levelName": "院级",
+            "options": [
+              { "optionKey": "champion", "optionName": "冠军/第一名", "score": 10.0, "needProof": true },
+              { "optionKey": "runner-up", "optionName": "亚军/第二名", "score": 9.0, "needProof": true },
+              { "optionKey": "third-place", "optionName": "季军/第三名", "score": 8.0, "needProof": true },
+              { "optionKey": "fourth-sixth", "optionName": "第四至六名", "score": 6.0, "needProof": true },
+              { "optionKey": "seventh-eighth", "optionName": "第七至八名", "score": 4.0, "needProof": true },
+              { "optionKey": "other", "optionName": "其他名次", "score": 3.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "evening-performance",
+        "projectName": "参加晚会等活动的节目演出",
+        "remark": "",
+        "type": "positive",
+        "repeatable": true,
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "aesthetic-activity",
+        "projectName": "积极参加美育活动、美育讲座等",
+        "remark": "",
+        "type": "positive",
+        "repeatable": true,
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 1.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "promo-video",
+        "projectName": "积极参与宣传视频拍摄",
+        "remark": "",
+        "type": "positive",
+        "repeatable": true,
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "art-troupe",
+        "projectName": "学院艺术团成员",
+        "remark": "",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "qualified", "optionName": "考核合格及以上", "score": 2.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "activity-disruption",
+        "projectName": "未遵守相关规定导致影响活动正常开展的",
+        "remark": "",
+        "type": "negative",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": false }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "custom",
+        "projectName": "自定义/待认定",
+        "remark": "",
+        "type": "custom",
+        "isCustom": true,
+        "levelGroups": []
+      }
+    ]
+  },
+  {
+    "itemKey": "labor-quality",
+    "itemName": "劳动品质",
+    "itemMaxScore": 10,
+    "type": "positive",
+    "projects": [
+      {
+        "projectKey": "volunteer-service",
+        "projectName": "志愿服务",
+        "remark": "需同时满足次数和时长要求方可按对应档次加分；次数越高、时长越长，加分越多。",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "count-5-plus",
+            "levelName": "5次及以上",
+            "options": [
+              { "optionKey": "hours-20-plus", "optionName": "20h及以上", "score": 10.0, "needProof": true },
+              { "optionKey": "hours-10-19", "optionName": "10h-19h", "score": 8.0, "needProof": true },
+              { "optionKey": "hours-under-10", "optionName": "不足10h", "score": 3.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "count-4",
+            "levelName": "4次",
+            "options": [
+              { "optionKey": "hours-20-plus", "optionName": "20h及以上", "score": 8.0, "needProof": true },
+              { "optionKey": "hours-10-19", "optionName": "10h-19h", "score": 6.0, "needProof": true },
+              { "optionKey": "hours-under-10", "optionName": "不足10h", "score": 2.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "count-3",
+            "levelName": "3次",
+            "options": [
+              { "optionKey": "hours-20-plus", "optionName": "20h及以上", "score": 6.0, "needProof": true },
+              { "optionKey": "hours-10-19", "optionName": "10h-19h", "score": 5.0, "needProof": true },
+              { "optionKey": "hours-under-10", "optionName": "不足10h", "score": 1.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "count-2",
+            "levelName": "2次",
+            "options": [
+              { "optionKey": "hours-20-plus", "optionName": "20h及以上", "score": 4.0, "needProof": true },
+              { "optionKey": "hours-10-19", "optionName": "10h-19h", "score": 3.0, "needProof": true },
+              { "optionKey": "hours-under-10", "optionName": "不足10h", "score": 0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "count-1",
+            "levelName": "1次",
+            "options": [
+              { "optionKey": "hours-20-plus", "optionName": "20h及以上", "score": 2.0, "needProof": true },
+              { "optionKey": "hours-10-19", "optionName": "10h-19h", "score": 1.0, "needProof": true },
+              { "optionKey": "hours-under-10", "optionName": "不足10h", "score": 0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "public-service",
+        "projectName": "工作成效好，具有较强的公共服务意识和奉献精神",
+        "remark": "1.有两个及以上职务且同时考核为优秀的，经所在学生组织、年级、班级或社团讨论通过，辅导员审核同意后可给予加分；\n2.个别积极协助班委开展班级工作的学生（未担任职务），可由班委提出、班会通过，辅导员审核同意后可给予加分。",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "custom",
+        "projectName": "自定义/待认定",
+        "remark": "",
+        "type": "custom",
+        "isCustom": true,
+        "levelGroups": []
+      }
+    ]
+  },
+  {
+    "itemKey": "labor-practice",
+    "itemName": "劳动实践",
+    "itemMaxScore": 10,
+    "type": "positive",
+    "projects": [
+      {
+        "projectKey": "civilized-dormitory",
+        "projectName": "文明宿舍、百佳宿舍",
+        "remark": "分值说明：3（+1/次）。1.集体荣誉，成员均加（扣）分。扣分按次数记，可叠加，不为负分；\n2.其他可认定的项目，根据相关活动通知执行加分；\n3.其他经学院学生工作领导小组认定的扣分情形，经评议可适当给予扣分。",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "school-above",
+            "levelName": "校级及以上",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 4.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "college",
+            "levelName": "院级（中队流动红旗）",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 3.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "dormitory-hygiene",
+        "projectName": "宿舍卫生平均分达85及以上",
+        "remark": "",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 6.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "campus-labor",
+        "projectName": "积极参加文明校园建设、劳动教育、校友服务、相关活动等",
+        "remark": "",
+        "type": "positive",
+        "repeatable": true,
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 1.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "social-practice",
+        "projectName": "参加暑假/寒假社会实践且工作成效良好",
+        "remark": "",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "teacher-led",
+            "levelName": "指导老师统一带队",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 3.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "self-led",
+            "levelName": "“返家乡活动”等非指导老师带队活动",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 1.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "dormitory-fail",
+        "projectName": "文明宿舍检查不合格",
+        "remark": "分值说明：3（-3）",
+        "type": "negative",
+        "levelGroups": [
+          {
+            "levelKey": "school",
+            "levelName": "学校",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": false }
+            ]
+          },
+          {
+            "levelKey": "college",
+            "levelName": "学院（无中队流动红旗）",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 3.0, "needProof": false }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "other-hygiene-issue",
+        "projectName": "其他内务检查存在问题",
+        "remark": "",
+        "type": "negative",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": false }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "custom",
+        "projectName": "自定义/待认定",
+        "remark": "",
+        "type": "custom",
+        "isCustom": true,
+        "levelGroups": []
+      }
+    ]
+  },
+  {
+    "itemKey": "social-work",
+    "itemName": "社会工作",
+    "itemMaxScore": 10,
+    "type": "positive",
+    "projects": [
+      {
+        "projectKey": "student-union-presidium",
+        "projectName": "团委学生副书记（团委副书记助理）、学生会主席团成员、社联主席团成员、学生管委会（自律会）主席团成员",
+        "remark": "分值说明：优秀：+10\n良好：+9\n合格：+6\n不合格：+0。兼任多个职务，按最高等次加分。",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "school",
+            "levelName": "校级",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 10.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "college",
+            "levelName": "院级",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 10.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "counselor-assistant",
+        "projectName": "辅导员助理、中队长；党支部书记（副书记）",
+        "remark": "分值说明：优秀：+10\n良好：+8\n合格：+5\n不合格：+0",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 10.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "class-league-leader",
+        "projectName": "团支书、班长、班助（区队长）；院学生组织部门负责人、社团负责人",
+        "remark": "分值说明：优秀：+10\n良好：+7\n合格：+5\n不合格：+0",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 10.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "vice-class-leader",
+        "projectName": "副班长、学习委员",
+        "remark": "分值说明：优秀：+9\n良好：+6\n合格：+4\n不合格：+0",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 9.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "other-class-committee",
+        "projectName": "其他班委",
+        "remark": "分值说明：优秀：+8\n良好：+5\n合格：+3\n不合格：+0",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 8.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "dormitory-head",
+        "projectName": "宿舍长",
+        "remark": "分值说明：优秀：+6\n良好：+4\n合格：+2\n不合格：+0",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 6.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "college-organization-staff",
+        "projectName": "院学生组织干事、社团成员",
+        "remark": "分值说明：优秀：+5\n良好：+3\n合格：+1\n不合格：+0",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "school-organization-dept",
+        "projectName": "校级学生组织部门、社团",
+        "remark": "",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "leader", "optionName": "负责人", "score": 7.0, "needProof": true },
+              { "optionKey": "member", "optionName": "成员", "score": 2.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "cadre-violation",
+        "projectName": "违反学生干部基本要求的",
+        "remark": "分值说明：社会工作项为零分。包含但不仅限以下情况：以权谋私、受到处分、不执行工作要求且多次教育后不改的等。其他经学院学生工作领导小组认定不予加分的情况。",
+        "type": "negative",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 0, "needProof": false }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "custom",
+        "projectName": "自定义/待认定",
+        "remark": "",
+        "type": "custom",
+        "isCustom": true,
+        "levelGroups": []
+      }
+    ]
+  },
+  {
+    "itemKey": "college-special",
+    "itemName": "学院专项行为管理",
+    "itemMaxScore": 10,
+    "type": "positive",
+    "projects": [
+      {
+        "projectKey": "military-drill",
+        "projectName": "航海类专业军事会操",
+        "remark": "分值说明：一等奖：+8\n二等奖：+7\n三等奖：+6\n参与活动：+4。相关任务以学院学生工作领导小组认定为准，所有项目可叠加。",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 8.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "military-competition",
+        "projectName": "军事类竞赛、（班队列、内务整理大赛等）",
+        "remark": "分值说明：一等奖：+5\n二等奖：+4\n三等奖：+3\n参与活动：+2",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "flag-guard",
+        "projectName": "国旗班参加校、院重大任务",
+        "remark": "",
+        "type": "positive",
+        "repeatable": true,
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "college-event-service",
+        "projectName": "服务学院重要（特殊）活动、重要会议等临时性重要工作",
+        "remark": "",
+        "type": "positive",
+        "repeatable": true,
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 1.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "english-cet",
+        "projectName": "通过英语四六级考试",
+        "remark": "1.英语四六级考试只加考试通过的当学期；\n2.班级（宿舍）成员均可加，可叠加。",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "cet-6",
+            "levelName": "六级",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 3.0, "needProof": true }
+            ]
+          },
+          {
+            "levelKey": "cet-4",
+            "levelName": "四级",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 1.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "no-makeup-exam",
+        "projectName": "班级（宿舍）期末考试无补考",
+        "remark": "",
+        "type": "positive",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": true }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "disrupt-activity",
+        "projectName": "影响比赛、任务、活动、会议正常开展的情况",
+        "remark": "以学院学生工作领导小组认定为准",
+        "type": "negative",
+        "levelGroups": [
+          {
+            "levelKey": "default",
+            "levelName": "标准",
+            "options": [
+              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": false }
+            ]
+          }
+        ]
+      },
+      {
+        "projectKey": "custom",
+        "projectName": "自定义/待认定",
+        "remark": "",
+        "type": "custom",
+        "isCustom": true,
+        "levelGroups": []
+      }
+    ]
+  }
+]
