@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package.json ./
 COPY tsconfig.json ./
 COPY tsconfig.server.json ./
-COPY vite.config.ts ./
+COPY vite.config.mts ./
 COPY nest-cli.json ./
 
 # 复制源代码
