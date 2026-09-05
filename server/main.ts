@@ -25,11 +25,21 @@ async function bootstrap() {
     // 直接使用 Express 静态资源中间件，不使用模板引擎
     app.use(express.static(clientDistDir));
 
-    // 对于所有非 API 路由，返回 index.html（支持 React Router 客户端路由）
+    // 对于所有非 API、非静态资源的 GET 请求，返回 index.html（支持 React Router 客户端路由）
     app.use((req, res, next) => {
+      // 只处理 GET 请求
+      if (req.method !== 'GET') {
+        return next();
+      }
+      // API 请求不处理
       if (req.path.startsWith('/api/')) {
         return next();
       }
+      // 静态资源请求（包含文件扩展名）不处理，让 express.static 处理
+      if (req.path.includes('.') && !req.path.endsWith('/')) {
+        return next();
+      }
+      // 其他请求返回 index.html
       const indexPath = join(clientDistDir, 'index.html');
       if (fs.existsSync(indexPath)) {
         return res.sendFile(indexPath);
