@@ -10,21 +10,17 @@ export default defineConfig({
     emptyOutDir: true,
   },
   resolve: {
-  alias: {
-    '@': path.resolve(__dirname, 'client/src'),
-    '@client': path.resolve(__dirname, 'client'),
-    '@server': path.resolve(__dirname, 'server'),
-    '@shared': path.resolve(__dirname, 'shared'),
+    alias: {
+      '@': path.resolve(__dirname, 'client/src'),
+      '@client': path.resolve(__dirname, 'client'),
+      '@server': path.resolve(__dirname, 'server'),
+      '@shared': path.resolve(__dirname, 'shared'),
+    },
   },
-},
   server: {
     port: 5173,
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
-        changeOrigin: true,
-      },
-      '/uploads': {
         target: 'http://localhost:3000',
         changeOrigin: true,
       },
