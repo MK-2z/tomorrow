@@ -21,6 +21,6 @@
       "@/*": ["client/src/*"]
     }
   },
-  "include": ["server/**/*", "shared/**/*", "client/src/**/*"],
-  "exclude": ["node_modules", "dist", "client/node_modules"]
+  "include": ["server/**/*", "shared/**/*"],
+  "exclude": ["node_modules", "dist", "client", "client/node_modules"]
 }
