@@ -151,15 +151,7 @@ const Layout = () => {
             <div className="flex items-center gap-3">
               {currentUser ? (
                 <>
-                  <div className="flex flex-col items-end">
-                    <span className="text-sm font-medium text-slate-900">
-                      {currentUser.displayName || currentUser.studentId}
-                    </span>
-                    <span className="text-xs text-slate-500">
-                      {currentUser.studentId}
-                    </span>
-                  </div>
-                  <Badge variant="secondary" className="text-xs">
+                  <Badge variant="secondary" className="text-sm px-3 py-1">
                     {ROLE_LABELS[currentUser.role] || currentUser.role}
                   </Badge>
                   <ChangePasswordDialog

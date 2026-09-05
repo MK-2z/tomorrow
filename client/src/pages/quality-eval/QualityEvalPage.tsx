@@ -94,8 +94,9 @@ const QualityEvalPage: React.FC = () => {
   const hasStudentIdentity = Boolean(currentUser?.studentId);
   // 以「学生身份」编辑/查看自己的记录：学生角色 或 学生管理员访问自己的记录
   const isSelfStudentMode = isStudent || (isAdmin && hasStudentIdentity && editId && !isView);
-  // 学生角色/学生管理员编辑自己记录时：学号永远只读
-  const studentIdReadOnly = hasStudentIdentity && (isStudent || (isAdmin && editId));
+  // 学生登录后学号可手动输入（不自动填充，也不设为只读）
+  // 仅在查看模式或管理员编辑他人记录时，学号才只读
+  const studentIdReadOnly = pageReadOnly || (isAdmin && editId && !isSelfStudentMode);
 
   const [studentId, setStudentId] = useState('');
   const [className, setClassName] = useState('');

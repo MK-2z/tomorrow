@@ -251,11 +251,19 @@ export function exportToExcel(
     setCell(ws, recordStartRow, COL.STUDENT_ID_A, record.studentId, CENTER_STYLE);
     mergeRange(ws, recordStartRow, COL.STUDENT_ID_A, recordEndRow, COL.STUDENT_ID_B);
 
-    // 班级
-    setCell(ws, rowCursor, COL.CLASS, record.className, CENTER_STYLE);
+    // 班级（纵向贯穿整个学生）
+    for (let r = recordStartRow; r <= recordEndRow; r += 1) {
+      setCell(ws, r, COL.CLASS, '', CENTER_STYLE);
+    }
+    setCell(ws, recordStartRow, COL.CLASS, record.className, CENTER_STYLE);
+    mergeRange(ws, recordStartRow, COL.CLASS, recordEndRow, COL.CLASS);
 
-    // 姓名
-    setCell(ws, rowCursor, COL.NAME, record.studentName, CENTER_STYLE);
+    // 姓名（纵向贯穿整个学生）
+    for (let r = recordStartRow; r <= recordEndRow; r += 1) {
+      setCell(ws, r, COL.NAME, '', CENTER_STYLE);
+    }
+    setCell(ws, recordStartRow, COL.NAME, record.studentName, CENTER_STYLE);
+    mergeRange(ws, recordStartRow, COL.NAME, recordEndRow, COL.NAME);
 
     // 总分（P-Q 两列水平合并 + 纵向贯穿整个学生）
     const qualityScore = Number(record.qualityScore) || 0;

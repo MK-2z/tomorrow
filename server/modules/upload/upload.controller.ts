@@ -31,10 +31,9 @@ export class UploadController {
           const uniqueSuffix =
             Date.now() + '-' + Math.round(Math.random() * 1e9);
           const ext = extname(file.originalname);
-          const safeName = file.originalname
-            .replace(/[^a-zA-Z0-9\u4e00-\u9fa5._-]/g, '_')
-            .slice(0, 50);
-          cb(null, `${uniqueSuffix}-${safeName}${ext}`);
+          // 文件名只使用时间戳和随机数，避免中文/特殊字符导致编码问题
+          // 原始文件名保存在返回数据中用于显示
+          cb(null, `${uniqueSuffix}${ext}`);
         },
       }),
       limits: {

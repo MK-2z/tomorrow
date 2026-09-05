@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { Logger } from '@nestjs/common';
-import { join } from 'path';
+import { join, extname, basename } from 'path';
 import * as fs from 'fs';
 import * as express from 'express';
 
@@ -27,6 +27,34 @@ async function bootstrap() {
   app.use('/uploads', express.static(uploadsDir, {
     maxAge: '7d',
     fallthrough: true,
+    setHeaders: (res, filePath) => {
+      // 确保浏览器正确识别文件类型
+      const ext = extname(filePath).toLowerCase();
+      const mimeTypes: Record<string, string> = {
+        '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png',
+        '.gif': 'image/gif', '.webp': 'image/webp', '.bmp': 'image/bmp',
+        '.svg': 'image/svg+xml', '.pdf': 'application/pdf',
+        '.doc': 'application/msword',
+        '.docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        '.xls': 'application/vnd.ms-excel',
+        '.xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        '.ppt': 'application/vnd.ms-powerpoint',
+        '.pptx': 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+        '.txt': 'text/plain; charset=utf-8',
+        '.zip': 'application/zip', '.rar': 'application/x-rar-compressed',
+        '.7z': 'application/x-7z-compressed', '.gz': 'application/gzip',
+        '.mp4': 'video/mp4', '.mov': 'video/quicktime', '.avi': 'video/x-msvideo',
+        '.mp3': 'audio/mpeg', '.wav': 'audio/wav', '.ogg': 'audio/ogg',
+      };
+      if (mimeTypes[ext]) {
+        res.setHeader('Content-Type', mimeTypes[ext]);
+      }
+      // 图片和PDF在浏览器中预览，其他文件下载
+      if (!['.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp', '.svg', '.pdf'].includes(ext)) {
+        const fileName = basename(filePath);
+        res.setHeader('Content-Disposition', `attachment; filename="${encodeURIComponent(fileName)}"`);
+      }
+    },
   }));
   logger.log('Uploads static files configured: ' + uploadsDir);
 
