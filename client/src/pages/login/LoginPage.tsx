@@ -19,6 +19,7 @@ import loginBg from '@/assets/images/login-bg.jpg';
 
 import { useAuth } from '@client/src/contexts/AuthContext';
 import { hasRole } from '@client/src/contexts/AuthContext';
+import ForceChangePasswordDialog from '@/components/ForceChangePasswordDialog';
 
 type LoginType = 'student' | 'teacher';
 
@@ -33,6 +34,7 @@ const LoginPage: React.FC = () => {
   const [teacherAccount, setTeacherAccount] = useState('');
   const [teacherPassword, setTeacherPassword] = useState('');
   const [submitting, setSubmitting] = useState(false);
+  const [showForceChangePassword, setShowForceChangePassword] = useState(false);
 
   const from = (location.state as { from?: { pathname: string } } | null)?.from?.pathname;
 
@@ -50,6 +52,13 @@ const LoginPage: React.FC = () => {
     setSubmitting(true);
     try {
       const user = await login(studentId.trim(), password, 'student');
+      // 首次登录（使用初始密码123456）强制修改密码
+      if (user.mustChangePassword) {
+        toast.info('首次登录，请先修改密码');
+        setShowForceChangePassword(true);
+        setSubmitting(false);
+        return;
+      }
       toast.success('登录成功');
       let target = '/eval';
       if (user.role === 'admin' || user.role === 'super_admin') {
@@ -102,6 +111,16 @@ const LoginPage: React.FC = () => {
     } finally {
       setSubmitting(false);
     }
+  };
+
+  const handleForceChangePasswordSuccess = () => {
+    // 清除登录状态，让用户使用新密码重新登录
+    localStorage.removeItem('quality_eval_user');
+    localStorage.removeItem('quality_eval_token');
+    localStorage.removeItem('quality_eval_login_portal');
+    setShowForceChangePassword(false);
+    setPassword('');
+    toast.success('密码修改成功，请使用新密码登录');
   };
 
   return (
@@ -236,6 +255,11 @@ const LoginPage: React.FC = () => {
           </Tabs>
         </CardContent>
       </Card>
+
+      <ForceChangePasswordDialog
+        open={showForceChangePassword}
+        onSuccess={handleForceChangePasswordSuccess}
+      />
     </div>
   );
 };

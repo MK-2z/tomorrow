@@ -229,6 +229,7 @@ export interface QualityEvalUser {
   className?: string;
   isActive: boolean;
   createdAt: string;
+  mustChangePassword?: boolean;
 }
 
 export interface LoginRequest {

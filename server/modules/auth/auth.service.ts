@@ -42,6 +42,7 @@ export class AuthService {
       className: row.className ?? undefined,
       isActive: row.isActive,
       createdAt: row.createdAt.toISOString(),
+      mustChangePassword: row.passwordHash === '123456',
     };
   }
 
