@@ -9,7 +9,7 @@ import {
   Trash2,
   X,
   Clock,
-  CheckCircle2,
+  Check,
   MessageSquareWarning,
   LayoutGrid,
 } from 'lucide-react';

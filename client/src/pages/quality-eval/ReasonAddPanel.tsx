@@ -1,5 +1,5 @@
 ﻿import React, { useState, useMemo, useEffect } from 'react';
-import { Plus, X, AlertCircle } from 'lucide-react';
+import { Plus, X, AlertTriangle } from 'lucide-react';
 import { toast } from 'sonner';
 
 import { Button } from '@/components/ui/button';
@@ -404,7 +404,7 @@ const ReasonAddPanel: React.FC<ReasonAddPanelProps> = ({
         {/* 志愿服务组合不满足加分条件提示 */}
         {isVolunteerService && allSelected && !meetsAddCondition && (
           <div className="flex items-center gap-1.5 rounded-md border border-amber-200 bg-amber-50 p-2 text-xs text-amber-700">
-            <AlertCircle className="h-3.5 w-3.5 shrink-0" />
+            <AlertTriangle className="h-3.5 w-3.5 shrink-0" />
             <span>未达到志愿服务加分最低条件，无法加分</span>
           </div>
         )}
@@ -430,7 +430,7 @@ const ReasonAddPanel: React.FC<ReasonAddPanelProps> = ({
             )}
             {stdForm.type === 'positive' && !isSingleStandardProject && allSelected && selectedProject && (
               <div className="flex items-center gap-1 text-xs text-rose-600">
-                <AlertCircle className="h-3 w-3" />
+                <AlertTriangle className="h-3 w-3" />
                 <span>该项目需上传证明文件</span>
               </div>
             )}
@@ -544,7 +544,7 @@ const ReasonAddPanel: React.FC<ReasonAddPanelProps> = ({
               />
             </div>
             <div className="flex items-start gap-1.5 rounded-md border border-amber-200 bg-amber-50 p-2 text-xs text-amber-700">
-              <AlertCircle className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+              <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0" />
               <div>
                 <div className="font-medium">自定义指标说明</div>
                 <div>提交后状态为「待认定」，需管理员审查确认后方可计入总分。请务必上传证明文件。</div>

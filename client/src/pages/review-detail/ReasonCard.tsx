@@ -1,7 +1,7 @@
 ﻿import React, { useState } from 'react';
 import { UniversalLink } from '@/compat/UniversalLink';
 import {
-  AlertCircle,
+  AlertTriangle,
   HelpCircle,
   AlertTriangle,
   FileText,
@@ -9,7 +9,7 @@ import {
   Pencil,
   Trash2,
   MessageSquareWarning,
-  CheckCircle2 as ApproveCircle,
+  Check as ApproveCircle,
   RotateCcw,
 } from 'lucide-react';
 import { showConfirm } from '@/compat';
@@ -200,7 +200,7 @@ export const ReasonCard: React.FC<ReasonCardProps> = ({
               className="flex h-6 w-6 items-center justify-center rounded-full bg-rose-100 text-rose-600 border border-rose-200"
               title="缺少证明文件"
             >
-              <AlertCircle className="h-3.5 w-3.5" />
+              <AlertTriangle className="h-3.5 w-3.5" />
             </span>
           )}
           {(isCustom || isPending) && (

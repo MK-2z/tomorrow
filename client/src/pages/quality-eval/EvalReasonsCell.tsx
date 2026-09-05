@@ -11,7 +11,7 @@ import {
   FileText,
   X,
   AlertTriangle,
-  AlertCircle,
+  AlertTriangle,
   ChevronDown,
 } from 'lucide-react';
 import { UniversalLink } from '@/compat/UniversalLink';
@@ -370,14 +370,14 @@ const EvalReasonsCell: React.FC<EvalReasonsCellProps> = ({
                           if ((reason.proofFiles?.length ?? 0) > 0) return null;
                          return (
                            <div className="flex items-center gap-1 text-xs text-rose-600">
-                             <AlertCircle className="h-3 w-3" />
+                             <AlertTriangle className="h-3 w-3" />
                              <span>需上传证明文件</span>
                            </div>
                          );
                        })()}
                       {reason.isPendingReview && (
                         <div className="flex items-center gap-1 text-xs text-amber-600">
-                          <AlertCircle className="h-3 w-3" />
+                          <AlertTriangle className="h-3 w-3" />
                           <span>待认定（自定义评分项需审查确认）</span>
                         </div>
                       )}

@@ -6,10 +6,10 @@ import { toast } from 'sonner';
 import {
   ArrowLeft,
   Clock,
-  CheckCircle2,
-  XCircle,
+  Check,
+  X,
   MessageSquareWarning,
-  CheckCircle2 as CheckCircleIcon,
+  Check as CheckCircle,
   Trash2,
 } from 'lucide-react';
 
@@ -60,9 +60,9 @@ import type {
 function getStatusIcon(status: ReviewStatus) {
   switch (status) {
     case 'approved':
-      return <CheckCircle2 className="h-4 w-4" />;
+      return <Check className="h-4 w-4" />;
     case 'rejected':
-      return <XCircle className="h-4 w-4" />;
+      return <X className="h-4 w-4" />;
     case 'needs_revision':
       return <MessageSquareWarning className="h-4 w-4" />;
     default:
@@ -543,7 +543,7 @@ const ReviewDetailPage: React.FC = () => {
                     onClick={handleApproveAllItems}
                     disabled={approvingAll || reviewProgress.allConfirmed}
                   >
-                    <CheckCircleIcon className="mr-1 h-3.5 w-3.5" />
+                    <CheckCircle className="mr-1 h-3.5 w-3.5" />
                     {approvingAll ? '确认中...' : '一键确认所有指标'}
                   </Button>
                 </div>
@@ -603,7 +603,7 @@ const ReviewDetailPage: React.FC = () => {
                                            ? 'bg-sky-100 text-sky-700 hover:bg-sky-100'
                                            : 'bg-emerald-100 text-emerald-700 hover:bg-emerald-100'}`}
                                        >
-                                         <CheckCircleIcon className="mr-1 h-3 w-3" />
+                                         <CheckCircle className="mr-1 h-3 w-3" />
                                          {isAutoApproved ? '自动通过' : getItemReviewStatusLabel(itemStatus)}
                                        </Badge>
                                      )}
@@ -650,7 +650,7 @@ const ReviewDetailPage: React.FC = () => {
                                       handleApproveItem(item.itemKey);
                                     }}
                                   >
-                                    <CheckCircleIcon className="mr-1 h-3.5 w-3.5" />
+                                    <CheckCircle className="mr-1 h-3.5 w-3.5" />
                                     确认通过
                                   </Button>
                                   <Button

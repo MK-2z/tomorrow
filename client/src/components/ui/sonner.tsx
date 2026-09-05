@@ -1,14 +1,13 @@
-﻿'use client';
+'use client';
 
 import * as React from 'react';
 import { cn } from '@/lib/utils';
 import {
-  CircleAlert,
-  CircleCheck,
-  CircleX,
-  Info,
-  Loader2,
+  Check,
   X,
+  Info,
+  AlertTriangle,
+  Loader2,
 } from 'lucide-react';
 import { Toaster as Sonner, type ToasterProps } from 'sonner';
 
@@ -20,27 +19,23 @@ function Toaster({ className, style, icons, ...props }: ToasterProps) {
       position="top-center"
       icons={{
         success: (
-          <CircleCheck
-            fill="currentColor"
-            className="size-4 text-success [&>:not(circle)]:stroke-(--normal-bg)"
+          <Check
+            className="size-4 text-success"
           />
         ),
         info: (
           <Info
-            fill="currentColor"
-            className="size-4 text-info [&>:not(circle)]:stroke-(--normal-bg)"
+            className="size-4 text-info"
           />
         ),
         warning: (
-          <CircleAlert
-            fill="currentColor"
-            className="size-4 text-warning [&>:not(circle)]:stroke-(--normal-bg)"
+          <AlertTriangle
+            className="size-4 text-warning"
           />
         ),
         error: (
-          <CircleX
-            fill="currentColor"
-            className="size-4 text-destructive [&>:not(circle)]:stroke-(--normal-bg)"
+          <X
+            className="size-4 text-destructive"
           />
         ),
         close: <X className="size-4 text-accent-foreground" />,

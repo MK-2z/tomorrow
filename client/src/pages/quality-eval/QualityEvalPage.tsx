@@ -9,7 +9,7 @@ import {
   Loader2,
   MessageSquareWarning,
   Clock,
-  CheckCircle2,
+  Check,
   Eye,
 } from 'lucide-react';
 
@@ -461,7 +461,7 @@ items: cat.items.map((item: EvalItem) => ({
            )}
             {hasStudentIdentity && !editId && myRecord && myRecord.reviewStatus === 'approved' && (
              <Alert variant="default" className="mb-4 border-emerald-300 bg-emerald-50">
-               <CheckCircle2 className="size-4 text-emerald-600" />
+               <Check className="size-4 text-emerald-600" />
                <AlertTitle className="text-emerald-800">
                  您已提交过评价，当前状态：已通过
                </AlertTitle>
