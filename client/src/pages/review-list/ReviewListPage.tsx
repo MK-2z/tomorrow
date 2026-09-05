@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { logger } from '@/utils/logger';
 import { toast } from 'sonner';
 import {
-  EyeIcon,
-  FileSpreadsheetIcon,
+  Eye,
+  FileSpreadsheet,
   Trash2,
   X,
   Clock,
@@ -398,7 +398,7 @@ const ReviewListPage: React.FC = () => {
                 </Button>
               )}
               <Button variant="outline" size="sm" onClick={handleExportSelected}>
-                <FileSpreadsheetIcon className="mr-1 h-4 w-4" />
+                <FileSpreadsheet className="mr-1 h-4 w-4" />
                 导出选中
               </Button>
               <Button
@@ -411,7 +411,7 @@ const ReviewListPage: React.FC = () => {
                 删除选中
               </Button>
               <Button size="sm" onClick={handleExportAll} disabled={exporting}>
-                <FileSpreadsheetIcon className="mr-1 h-4 w-4" />
+                <FileSpreadsheet className="mr-1 h-4 w-4" />
                 导出全部
               </Button>
             </div>
@@ -602,7 +602,7 @@ const ReviewListPage: React.FC = () => {
                              size="sm"
                              onClick={() => handleView(record.id)}
                            >
-                             <EyeIcon className="size-4" />
+                             <Eye className="size-4" />
                              查看
                            </Button>
                            {isSuperAdmin && (

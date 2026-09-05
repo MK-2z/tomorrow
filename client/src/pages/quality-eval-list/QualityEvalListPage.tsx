@@ -5,12 +5,12 @@ import { toast } from 'sonner';
 import {
   ChevronDown,
   ChevronUp,
-  EyeIcon,
+  Eye,
   MessageSquareWarning,
-  PlusIcon,
-  RotateCcwIcon,
-  SearchIcon,
-  Trash2Icon,
+  Plus,
+  RotateCcw,
+  Search,
+  Trash2,
 } from 'lucide-react';
 
 import {
@@ -347,7 +347,7 @@ const QualityEvalListPage: React.FC = () => {
           </div>
           <div className="flex flex-col items-end gap-2">
             <Button variant="outline" size="sm" onClick={() => handleView(record.id)}>
-              <EyeIcon className="size-4" />
+              <Eye className="size-4" />
               查看详情
             </Button>
             {canEdit && (
@@ -368,7 +368,7 @@ const QualityEvalListPage: React.FC = () => {
           <CardTitle className="text-xl">素质评价记录</CardTitle>
           {hasStudentIdentity && items.length === 0 && !loading && (
             <Button onClick={handleCreate}>
-              <PlusIcon className="size-4" />
+              <Plus className="size-4" />
               新建评价
             </Button>
           )}
@@ -393,7 +393,7 @@ const QualityEvalListPage: React.FC = () => {
                   </EmptyHeader>
                   <EmptyContent>
                     <Button onClick={handleCreate}>
-                      <PlusIcon className="size-4" />
+                      <Plus className="size-4" />
                       新建评价
                     </Button>
                   </EmptyContent>
@@ -450,15 +450,15 @@ const QualityEvalListPage: React.FC = () => {
                 </div>
                 <div className="ml-auto flex items-center gap-2">
                   <Button variant="secondary" onClick={handleSearch}>
-                    <SearchIcon className="size-4" />
+                    <Search className="size-4" />
                     搜索
                   </Button>
                   <Button variant="outline" onClick={handleReset}>
-                    <RotateCcwIcon className="size-4" />
+                    <RotateCcw className="size-4" />
                     重置
                   </Button>
                   <Button onClick={handleCreate}>
-                    <PlusIcon className="size-4" />
+                    <Plus className="size-4" />
                     新建评价
                   </Button>
                 </div>
@@ -502,7 +502,7 @@ const QualityEvalListPage: React.FC = () => {
                             </EmptyHeader>
                             <EmptyContent>
                               <Button size="sm" onClick={handleCreate}>
-                                <PlusIcon className="size-4" />
+                                <Plus className="size-4" />
                                 新建评价
                               </Button>
                             </EmptyContent>
@@ -553,7 +553,7 @@ const QualityEvalListPage: React.FC = () => {
                                     size="sm"
                                     onClick={() => handleView(record.id)}
                                   >
-                                    <EyeIcon className="size-4" />
+                                    <Eye className="size-4" />
                                     查看
                                   </Button>
                                   {isSuperAdmin && (
@@ -563,7 +563,7 @@ const QualityEvalListPage: React.FC = () => {
                                       className="text-destructive"
                                       onClick={() => openDeleteDialog(record)}
                                     >
-                                      <Trash2Icon className="size-4" />
+                                      <Trash2 className="size-4" />
                                       删除
                                     </Button>
                                   )}
