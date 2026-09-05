@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2021",
+    "module": "commonjs",
+    "lib": ["ES2021"],
+    "outDir": "./dist/server",
+    "rootDir": "./",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "baseUrl": "./",
+    "paths": {
+      "@server/*": ["server/*"],
+      "@shared/*": ["shared/*"]
+    }
+  },
+  "include": ["server/**/*", "shared/**/*"],
+  "exclude": ["node_modules", "dist", "client", "client/node_modules"]
+}
