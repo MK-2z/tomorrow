@@ -14,8 +14,8 @@ COPY server ./server
 COPY shared ./shared
 
 # 安装依赖
-RUN npm install
-
+# 安装依赖（忽略 peer dependency 检查，避免 ERESOLVE 错误）
+RUN npm install --legacy-peer-deps
 # 构建前端和后端
 RUN npm run build
 
