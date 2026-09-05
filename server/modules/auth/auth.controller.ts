@@ -191,6 +191,42 @@ export class AuthController {
   }
 
   @NeedLogin()
+  @Post('users/:id/reset-password')
+  async resetPassword(
+    @Headers('x-student-id') operatorStudentId: string,
+    @Param('id') id: string,
+  ): Promise<{ success: boolean; message: string }> {
+    const realRole = await this.authService.getOperatorRole(operatorStudentId);
+    if (!isSuperAdmin(realRole ?? '')) {
+      throw new ForbiddenException('仅超级管理员可重置用户密码');
+    }
+
+    let targetStudentId = '';
+    let targetStudentName = '';
+    try {
+      const user = await this.authService.getUserById(id);
+      targetStudentId = user.studentId;
+      targetStudentName = user.displayName || '';
+    } catch {
+      // ignore
+    }
+
+    await this.authService.resetPassword(id);
+
+    this.authService.logOperation(
+      operatorStudentId || 'system',
+      '',
+      realRole,
+      'password_reset',
+      targetStudentId,
+      targetStudentName,
+      '密码已重置为默认密码 123456',
+    ).catch(() => {});
+
+    return { success: true, message: '密码已重置为 123456' };
+  }
+
+  @NeedLogin()
   @Delete('users/:id')
   async deleteUser(
     @Headers('x-student-id') operatorStudentId: string,

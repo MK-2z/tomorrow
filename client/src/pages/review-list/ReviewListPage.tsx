@@ -6,6 +6,7 @@ import { toast } from 'sonner';
 import {
   Eye,
   FileSpreadsheet,
+  FileArchive,
   Trash2,
   X,
   Clock,
@@ -55,6 +56,7 @@ import { ColumnFilter, type SortOrder } from '@client/src/components/ui/column-f
 
 import * as qualityEvalApi from '@client/src/api/quality-eval';
 import { exportToExcel } from '@client/src/utils/export-excel';
+import { exportProofFilesToZip } from '@client/src/utils/export-proof-zip';
 import { useAuth } from '@client/src/contexts/AuthContext';
 import type { QualityEvalRecord, ReviewStatus } from '@shared/api.interface';
 import { showConfirm } from '@/compat';
@@ -294,6 +296,48 @@ const ReviewListPage: React.FC = () => {
     }
   };
 
+  const handleExportProofZip = async () => {
+    if (exporting) return;
+    setExporting(true);
+    try {
+      const params: {
+        reviewStatus?: string;
+        sortField?: string;
+        sortOrder?: 'asc' | 'desc';
+        studentIds?: string[];
+        studentNames?: string[];
+        classNames?: string[];
+        reviewStatuses?: string[];
+      } = {
+        reviewStatus: statusTab === 'all' ? undefined : statusTab,
+        sortField: sortField ?? undefined,
+        sortOrder: sortOrder ?? undefined,
+      };
+      if (columnFilters.studentId.length > 0) params.studentIds = columnFilters.studentId;
+      if (columnFilters.studentName.length > 0) params.studentNames = columnFilters.studentName;
+      if (columnFilters.className.length > 0) params.classNames = columnFilters.className;
+      if (columnFilters.reviewStatus.length > 0) params.reviewStatuses = columnFilters.reviewStatus;
+
+      const records = await qualityEvalApi.exportQualityEval(params);
+      if (records.length === 0) {
+        toast.info('暂无评价记录可导出');
+        return;
+      }
+
+      toast.info('正在打包证明材料，请稍候...（文件较多时可能需要较长时间）');
+      await exportProofFilesToZip(records, { onlyWithProof: true });
+      toast.success('证明材料导出完成');
+    } catch (error) {
+      logger.error('导出证明材料ZIP失败', error);
+      const msg = error && typeof error === 'object' && 'message' in error
+        ? String((error as { message: unknown }).message)
+        : '导出失败，请稍后重试';
+      toast.error(msg);
+    } finally {
+      setExporting(false);
+    }
+  };
+
   const handleDeleteOne = async (record: QualityEvalRecord) => {
     const confirmed = await showConfirm(`确定要删除 ${record.studentName}（${record.studentId}）的评价记录吗？\n\n删除后不可恢复，该学生将可以重新提交评价。`);
     if (!confirmed) return;
@@ -413,6 +457,10 @@ const ReviewListPage: React.FC = () => {
               <Button size="sm" onClick={handleExportAll} disabled={exporting}>
                 <FileSpreadsheet className="mr-1 h-4 w-4" />
                 导出全部
+              </Button>
+              <Button variant="outline" size="sm" onClick={handleExportProofZip} disabled={exporting}>
+                <FileArchive className="mr-1 h-4 w-4" />
+                导出证明材料
               </Button>
             </div>
           )}

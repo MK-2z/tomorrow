@@ -7,6 +7,7 @@ import { QualityEvalModule } from './modules/quality-eval/quality-eval.module';
 import { ViewModule } from './modules/view/view.module';
 import { InitModule } from './modules/init/init.module';
 import { DatabaseModule } from './database/database.module';
+import { UploadModule } from './modules/upload/upload.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { DatabaseModule } from './database/database.module';
     QualityEvalModule,
     ViewModule,
     InitModule,
+    UploadModule,
   ],
   providers: [
     {

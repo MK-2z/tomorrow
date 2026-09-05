@@ -145,6 +145,23 @@ export async function changePassword(
   }
 }
 
+export async function resetPassword(id: string): Promise<{ success: boolean; message: string }> {
+  try {
+    const res = await axiosForBackend.post<{ success: boolean; message: string }>(
+      `/api/auth/users/${id}/reset-password`,
+      {},
+      { headers: getAuthHeaders() },
+    );
+    if (!res.data?.success) {
+      throw new Error(res.data?.message || '重置密码失败');
+    }
+    return res.data;
+  } catch (error) {
+    logger.error('重置密码失败', error);
+    throw error;
+  }
+}
+
 export async function deleteUser(id: string): Promise<void> {
   try {
     const res = await axiosForBackend.delete(`/api/auth/users/${id}`, {

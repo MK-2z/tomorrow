@@ -315,6 +315,28 @@ export class AuthService {
     this.logger.log(`用户修改密码: ${userId}`);
   }
 
+  async resetPassword(userId: string): Promise<void> {
+    const rows = await this.db
+      .select()
+      .from(qualityEvalUsers)
+      .where(eq(qualityEvalUsers.id, userId))
+      .limit(1);
+
+    if (rows.length === 0) {
+      throw new NotFoundException('用户不存在');
+    }
+
+    await this.db
+      .update(qualityEvalUsers)
+      .set({
+        passwordHash: '123456',
+        updatedAt: new Date(),
+      })
+      .where(eq(qualityEvalUsers.id, userId));
+
+    this.logger.log(`管理员重置用户密码: ${userId} -> 123456`);
+  }
+
   async deleteUser(userId: string): Promise<void> {
     const user = await this.db
       .select({

@@ -193,6 +193,22 @@ const UserManagementPage: React.FC = () => {
     }
   };
 
+  const handleResetPassword = async (user: QualityEvalUser): Promise<void> => {
+    if (!await showConfirm(`确定要重置用户 ${user.displayName || user.studentId}（${user.studentId}）的密码吗？\n\n重置后密码将变为默认密码 123456，该用户下次登录时需修改密码。`)) {
+      return;
+    }
+    try {
+      await authApi.resetPassword(user.id);
+      toast.success('密码已重置为 123456');
+    } catch (err: unknown) {
+      logger.error(`重置密码失败: ${String(err)}`);
+      const msg = err && typeof err === 'object' && 'message' in err
+        ? String((err as { message: unknown }).message)
+        : '重置密码失败';
+      toast.error(msg);
+    }
+  };
+
   const selectableUsers = users.filter((u: QualityEvalUser) => u.role !== 'super_admin');
   const allSelected = selectableUsers.length > 0 && selectableUsers.every((u: QualityEvalUser) => selectedIds.has(u.id));
   const someSelected = selectableUsers.some((u: QualityEvalUser) => selectedIds.has(u.id)) && !allSelected;
@@ -481,6 +497,16 @@ const UserManagementPage: React.FC = () => {
                                 >
                                   <ShieldOff className="mr-1 h-3 w-3" />
                                   取消管理员
+                                </Button>
+                              )}
+                              {isSuperAdmin && user.role !== 'super_admin' && (
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  onClick={() => handleResetPassword(user)}
+                                >
+                                  <RotateCcw className="mr-1 h-3 w-3" />
+                                  重置密码
                                 </Button>
                               )}
                               {!disabled && isSuperAdmin && (

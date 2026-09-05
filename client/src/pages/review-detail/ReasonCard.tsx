@@ -1,5 +1,4 @@
 ﻿import React, { useState } from 'react';
-import { UniversalLink } from '@/compat/UniversalLink';
 import {
   AlertTriangle,
   HelpCircle,
@@ -264,9 +263,9 @@ export const ReasonCard: React.FC<ReasonCardProps> = ({
             <div className="flex flex-wrap gap-2">
               {reason.proofFiles.map((file: ProofFile) =>
                 isImageFile(file) ? (
-                  <UniversalLink
+                  <a
                     key={file.id}
-                    to={file.url}
+                    href={file.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative"
@@ -282,11 +281,11 @@ export const ReasonCard: React.FC<ReasonCardProps> = ({
                     <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-md">
                       <ZoomIn className="h-4 w-4 text-white" />
                     </div>
-                  </UniversalLink>
+                  </a>
                 ) : (
-                  <UniversalLink
+                  <a
                     key={file.id}
-                    to={file.url}
+                    href={file.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 rounded-md border border-border bg-background px-3 py-2 text-xs hover:bg-accent transition-colors"
@@ -294,7 +293,7 @@ export const ReasonCard: React.FC<ReasonCardProps> = ({
                   >
                     <FileText className="h-4 w-4 text-muted-foreground" />
                     <span className="max-w-[120px] truncate">{file.name}</span>
-                  </UniversalLink>
+                  </a>
                 ),
               )}
             </div>

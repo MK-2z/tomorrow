@@ -1,7 +1,6 @@
 ﻿import React, { useRef, useState, useMemo } from 'react';
 import { logger } from '@/utils/logger';
-import { getDataloom } from '@/compat';
-import { getDefaultBucketId } from '@/compat';
+import { axiosForBackend } from '@/utils/axios';
 import { toast } from 'sonner';
 import {
   Plus,
@@ -11,10 +10,8 @@ import {
   FileText,
   X,
   AlertTriangle,
-  AlertTriangle,
   ChevronDown,
 } from 'lucide-react';
-import { UniversalLink } from '@/compat/UniversalLink';
 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -189,31 +186,45 @@ const EvalReasonsCell: React.FC<EvalReasonsCellProps> = ({
     const reason = reasons.find((r: EvalReason) => r.id === reasonId);
     if (!reason) return;
 
+    // 检查文件大小（20MB）
+    const maxSize = 20 * 1024 * 1024;
+    if (file.size > maxSize) {
+      toast.error(`文件大小不能超过 20MB（当前 ${(file.size / 1024 / 1024).toFixed(1)}MB）`);
+      if (fileInputRef.current) fileInputRef.current.value = '';
+      return;
+    }
+
     setUploadingReasonId(reasonId);
     try {
-      const dataloom = await getDataloom();
-      const { data, error } = await dataloom
-        .storage
-        .from(getDefaultBucketId())
-        .uploadFile(file);
-      if (error || !data) {
-        throw new Error(
-          `上传失败: ${String(
-            error?.message ?? (error as { error_msg?: string })?.error_msg ?? '未知错误',
-          )}`,
-        );
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const res = await axiosForBackend.post('/api/upload', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+        timeout: 60000, // 上传超时60秒
+      });
+
+      if (!res.data?.success || !res.data.data) {
+        throw new Error(res.data?.message || '上传失败');
       }
+
       const newFile: ProofFile = {
         id: `${reasonId}-${Date.now()}`,
-        name: file.name,
-        url: data.download_url,
+        name: res.data.data.name || file.name,
+        url: res.data.data.url,
         reasonId,
       };
       updateReasonFiles(reasonId, [...(reason.proofFiles || []), newFile]);
       toast.success(`${file.name} 上传成功`);
     } catch (err) {
       logger.error(`证明文件上传失败: ${String(err)}`);
-      toast.error(String(err));
+      const errorMsg =
+        (err as { response?: { data?: { message?: string } } })?.response?.data?.message ||
+        (err as { message?: string })?.message ||
+        '上传失败，请重试';
+      toast.error(errorMsg);
     } finally {
       setUploadingReasonId(null);
       if (fileInputRef.current) fileInputRef.current.value = '';
@@ -401,15 +412,15 @@ const EvalReasonsCell: React.FC<EvalReasonsCellProps> = ({
                               key={f.id}
                               className="flex items-center justify-between gap-2 rounded bg-muted/50 px-2 py-1 text-xs"
                             >
-                              <UniversalLink
-                                to={f.url}
+                              <a
+                                href={f.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex min-w-0 flex-1 items-center gap-1 truncate hover:underline"
                               >
                                 <FileText className="h-3 w-3 shrink-0 text-muted-foreground" />
                                 <span className="truncate">{f.name}</span>
-                              </UniversalLink>
+                              </a>
                               {!readOnly && (
                                 <button
                                   onClick={() => removeFile(reason.id, f.id)}

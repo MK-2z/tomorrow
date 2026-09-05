@@ -19,6 +19,17 @@ async function bootstrap() {
   // 启用 CORS
   app.enableCors();
 
+  // 提供上传文件静态资源
+  const uploadsDir = join(process.cwd(), 'uploads');
+  if (!fs.existsSync(uploadsDir)) {
+    fs.mkdirSync(uploadsDir, { recursive: true });
+  }
+  app.use('/uploads', express.static(uploadsDir, {
+    maxAge: '7d',
+    fallthrough: true,
+  }));
+  logger.log('Uploads static files configured: ' + uploadsDir);
+
   // 提供前端静态资源
   const clientDistDir = join(process.cwd(), 'dist/client');
   if (fs.existsSync(clientDistDir)) {
