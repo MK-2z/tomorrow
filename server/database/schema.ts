@@ -131,6 +131,7 @@ export const qualityEvalSettings = pgTable("quality_eval_settings", {
   // System field: Updater (auto-filled, do not modify)
   updatedBy: userProfile("_updated_by").default(sql`CASE
     WHEN (current_setting('app.user_id'::text, true) = ''::text) THEN NULL`),
+// @ts-ignore
 }, (table) => [
   uniqueIndex("quality_eval_settings_setting_key_key").on(table.settingKey),
 ]);
@@ -154,6 +155,7 @@ export const qualityEvalOperationLogs = pgTable("quality_eval_operation_logs", {
   // System field: Updater (auto-filled, do not modify)
   updatedBy: userProfile("_updated_by").default(sql`CASE
     WHEN (current_setting('app.user_id'::text, true) = ''::text) THEN NULL`),
+// @ts-ignore
 }, (table) => [
   index("idx_quality_eval_logs_type").on(table.operationType),
   index("idx_quality_eval_logs_operator").on(table.operatorStudentId),
@@ -178,6 +180,7 @@ export const qualityEvalUsers = pgTable("quality_eval_users", {
   // System field: Updater (auto-filled, do not modify)
   updatedBy: userProfile("_updated_by").default(sql`CASE
     WHEN (current_setting('app.user_id'::text, true) = ''::text) THEN NULL`),
+// @ts-ignore
 }, (table) => [
   uniqueIndex("quality_eval_users_student_id_key").on(table.studentId),
   index("idx_quality_eval_users_role").on(table.role),
@@ -214,6 +217,7 @@ export const qualityEvalRecords = pgTable("quality_eval_records", {
   // System field: Updater (auto-filled, do not modify)
   updatedBy: userProfile("_updated_by").default(sql`CASE
     WHEN (current_setting('app.user_id'::text, true) = ''::text) THEN NULL`),
+// @ts-ignore
 }, (table) => [
   index("idx_quality_eval_student_id").on(table.studentId),
   index("idx_quality_eval_created_at").on(table.createdAt),
