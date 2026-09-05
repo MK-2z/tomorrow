@@ -1,5 +1,3 @@
-@plugin "@tailwindcss/typography";
-
 @utility prose {
   --tw-prose-body: var(--foreground);
   --tw-prose-headings: var(--foreground);
