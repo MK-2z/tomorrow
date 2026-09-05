@@ -1,8 +1,8 @@
 import { NestFactory } from '@nestjs/core';
 import { Logger } from '@nestjs/common';
 import { join } from 'path';
-import { __express as hbsExpressEngine } from 'hbs';
 import * as fs from 'fs';
+import * as express from 'express';
 
 import type { NestExpressApplication } from '@nestjs/platform-express';
 import { AppModule } from './app.module';
@@ -19,13 +19,27 @@ async function bootstrap() {
   // 启用 CORS
   app.enableCors();
 
-  // 注册视图引擎, 渲染 client 目录下的 html 文件
-  const viewsDir = join(process.cwd(), 'dist/client');
-  if (fs.existsSync(viewsDir)) {
-    app.setBaseViewsDir(viewsDir);
-    app.setViewEngine('html');
-    app.engine('html', hbsExpressEngine);
-    app.useStaticAssets(viewsDir);
+  // 提供前端静态资源
+  const clientDistDir = join(process.cwd(), 'dist/client');
+  if (fs.existsSync(clientDistDir)) {
+    // 直接使用 Express 静态资源中间件，不使用模板引擎
+    app.use(express.static(clientDistDir));
+
+    // 对于所有非 API 路由，返回 index.html（支持 React Router 客户端路由）
+    app.use((req, res, next) => {
+      if (req.path.startsWith('/api/')) {
+        return next();
+      }
+      const indexPath = join(clientDistDir, 'index.html');
+      if (fs.existsSync(indexPath)) {
+        return res.sendFile(indexPath);
+      }
+      next();
+    });
+
+    logger.log('Frontend static files served from dist/client');
+  } else {
+    logger.warn('Frontend dist directory not found: ' + clientDistDir);
   }
 
   await app.listen(port, host);
