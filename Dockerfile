@@ -5,6 +5,7 @@ WORKDIR /app
 # 复制依赖文件
 COPY package.json ./
 COPY tsconfig.json ./
+COPY tsconfig.server.json ./
 COPY vite.config.ts ./
 COPY nest-cli.json ./
 
@@ -13,9 +14,9 @@ COPY client ./client
 COPY server ./server
 COPY shared ./shared
 
-# 安装依赖
 # 安装依赖（忽略 peer dependency 检查，避免 ERESOLVE 错误）
 RUN npm install --legacy-peer-deps
+
 # 构建前端和后端
 RUN npm run build
 
