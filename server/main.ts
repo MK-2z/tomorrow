@@ -13,7 +13,7 @@ async function bootstrap() {
   });
 
   const logger = new Logger('Bootstrap');
-  const host = process.env.SERVER_HOST || '0.0.0.0';
+  const host = '0.0.0.0';
   const port = Number(process.env.PORT || process.env.SERVER_PORT || '3000');
 
   // 启用 CORS
