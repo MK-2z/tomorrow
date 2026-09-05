@@ -41,4 +41,4 @@ ENV NODE_ENV=production
 ENV PORT=3000
 
 # 启动命令
-CMD ["node", "dist/server/main.js"]
+CMD ["node", "dist/server/server/main.js"]
