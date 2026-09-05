@@ -150,17 +150,16 @@ const QualityEvalPage: React.FC = () => {
   }, [isView, recordStatus, resubmitted, hasStudentIdentity, isFillTimeAllowed, isEdit, editId, myRecord]);
 
 
-  useEffect(() => {
-    // 学生身份：自动预填身份信息（创建新记录时）
-    if (editId) return;
-    if (!currentUser) return;
-    if (!hasStudentIdentity) return;
-    if (studentId || className || studentName) return;
-    setStudentId(currentUser.studentId);
-    // 有值就填，没有就留空让学生输入
-    setClassName(currentUser.className || '');
-    setStudentName(currentUser.displayName || '');
-  }, [editId, currentUser, hasStudentIdentity, studentId, className, studentName]);
+  // 学生登录后不自动填写班级姓名和学号，所有字段留空可编辑
+  // useEffect(() => {
+  //   if (editId) return;
+  //   if (!currentUser) return;
+  //   if (!hasStudentIdentity) return;
+  //   if (studentId || className || studentName) return;
+  //   setStudentId(currentUser.studentId);
+  //   setClassName(currentUser.className || '');
+  //   setStudentName(currentUser.displayName || '');
+  // }, [editId, currentUser, hasStudentIdentity, studentId, className, studentName]);
 
   useEffect(() => {
     // 学生身份新建模式下：自动查询自己是否已有记录

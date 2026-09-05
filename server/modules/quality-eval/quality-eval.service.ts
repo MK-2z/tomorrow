@@ -935,33 +935,56 @@ export class QualityEvalService {
       },
     };
 
-    // 根据各指标审查状态重新计算整体审查状态
-    const allItemKeys = this.collectAllItemKeys(
-      currentEval.categories ?? [],
-    );
-    const overallStatus = this.computeOverallReviewStatus(
-      nextItemStatus,
-      allItemKeys,
-    );
+    // 标记待修改时不改变整体记录状态，只有点击"打回"才会改变整体状态
+    // 标记通过时，如果所有指标都通过了，整体状态变为 approved
+    let nextEval: EvalDataJson;
+    let updateSet: Partial<QualityEvalInsert>;
 
-    const nextEval: EvalDataJson = {
-      ...currentEval,
-      review: {
-        status: overallStatus,
-        comment: currentEval.review?.comment,
-        reviewedAt: nowIso,
-        reviewedBy: reviewerId,
-      },
-    };
+    if (dto.status === 'needs_revision') {
+      // 标记待修改：只更新单个指标状态，不改变整体状态
+      nextEval = {
+        ...currentEval,
+        review: {
+          status: currentEval.review?.status ?? 'pending',
+          comment: currentEval.review?.comment,
+          reviewedAt: currentEval.review?.reviewedAt,
+          reviewedBy: currentEval.review?.reviewedBy,
+        },
+      };
+      updateSet = {
+        reviewItemStatus: nextItemStatus,
+        evalData: nextEval,
+        updatedAt: new Date(),
+      };
+    } else {
+      // 标记通过或其他状态：重新计算整体状态
+      const allItemKeys = this.collectAllItemKeys(
+        currentEval.categories ?? [],
+      );
+      const overallStatus = this.computeOverallReviewStatus(
+        nextItemStatus,
+        allItemKeys,
+      );
 
-    const updateSet: Partial<QualityEvalInsert> = {
-      reviewItemStatus: nextItemStatus,
-      evalData: nextEval,
-      updatedAt: new Date(),
-    };
+      nextEval = {
+        ...currentEval,
+        review: {
+          status: overallStatus,
+          comment: currentEval.review?.comment,
+          reviewedAt: nowIso,
+          reviewedBy: reviewerId,
+        },
+      };
 
-    if (overallStatus === 'needs_revision') {
-      updateSet.resubmitted = false;
+      updateSet = {
+        reviewItemStatus: nextItemStatus,
+        evalData: nextEval,
+        updatedAt: new Date(),
+      };
+
+      if (overallStatus === 'needs_revision') {
+        updateSet.resubmitted = false;
+      }
     }
 
     const updated = await this.db

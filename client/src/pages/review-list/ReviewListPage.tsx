@@ -298,27 +298,15 @@ const ReviewListPage: React.FC = () => {
 
   const handleExportProofZip = async () => {
     if (exporting) return;
+    if (selectedIds.size === 0) {
+      toast.info('请先选择要导出证明材料的学生');
+      return;
+    }
     setExporting(true);
     try {
-      const params: {
-        reviewStatus?: string;
-        sortField?: string;
-        sortOrder?: 'asc' | 'desc';
-        studentIds?: string[];
-        studentNames?: string[];
-        classNames?: string[];
-        reviewStatuses?: string[];
-      } = {
-        reviewStatus: statusTab === 'all' ? undefined : statusTab,
-        sortField: sortField ?? undefined,
-        sortOrder: sortOrder ?? undefined,
-      };
-      if (columnFilters.studentId.length > 0) params.studentIds = columnFilters.studentId;
-      if (columnFilters.studentName.length > 0) params.studentNames = columnFilters.studentName;
-      if (columnFilters.className.length > 0) params.classNames = columnFilters.className;
-      if (columnFilters.reviewStatus.length > 0) params.reviewStatuses = columnFilters.reviewStatus;
-
-      const records = await qualityEvalApi.exportQualityEval(params);
+      const records = await qualityEvalApi.exportQualityEval({
+        ids: Array.from(selectedIds),
+      });
       if (records.length === 0) {
         toast.info('暂无评价记录可导出');
         return;
@@ -441,9 +429,14 @@ const ReviewListPage: React.FC = () => {
                   清除筛选
                 </Button>
               )}
-              <Button variant="outline" size="sm" onClick={handleExportSelected}>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleExportSelected}
+                disabled={exporting || selectedIds.size === 0}
+              >
                 <FileSpreadsheet className="mr-1 h-4 w-4" />
-                导出选中
+                导出评价记录
               </Button>
               <Button
                 variant="destructive"
@@ -454,11 +447,12 @@ const ReviewListPage: React.FC = () => {
                 <Trash2 className="mr-1 h-4 w-4" />
                 删除选中
               </Button>
-              <Button size="sm" onClick={handleExportAll} disabled={exporting}>
-                <FileSpreadsheet className="mr-1 h-4 w-4" />
-                导出全部
-              </Button>
-              <Button variant="outline" size="sm" onClick={handleExportProofZip} disabled={exporting}>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleExportProofZip}
+                disabled={exporting || selectedIds.size === 0}
+              >
                 <FileArchive className="mr-1 h-4 w-4" />
                 导出证明材料
               </Button>

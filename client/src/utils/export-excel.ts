@@ -127,13 +127,6 @@ function formatReasonText(reason: EvalReason): string {
   if (score !== 0) {
     parts.push(`（${score > 0 ? '+' : ''}${score}分）`);
   }
-  const fileNames = (reason.proofFiles ?? [])
-    .map((f) => f.name)
-    .filter(Boolean)
-    .join('、');
-  if (fileNames) {
-    parts.push(`【证明：${fileNames}】`);
-  }
   return parts.join('');
 }
 
