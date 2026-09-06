@@ -1164,7 +1164,7 @@
             "levelKey": "college",
             "levelName": "院级（中队流动红旗）",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 3.0, "needProof": true }
+              { "optionKey": "default", "optionName": "标准", "score": 1.0, "needProof": true }
             ]
           }
         ]
