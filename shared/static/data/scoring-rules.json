@@ -1438,12 +1438,16 @@
         "projectName": "航海类专业军事会操",
         "remark": "分值说明：一等奖：+8\n二等奖：+7\n三等奖：+6\n参与活动：+4。相关任务以学院学生工作领导小组认定为准，所有项目可叠加。",
         "type": "positive",
+        "repeatable": true,
         "levelGroups": [
           {
-            "levelKey": "default",
-            "levelName": "标准",
+            "levelKey": "award-level",
+            "levelName": "奖项等级",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 8.0, "needProof": true }
+              { "optionKey": "first", "optionName": "一等奖", "score": 8.0, "needProof": true },
+              { "optionKey": "second", "optionName": "二等奖", "score": 7.0, "needProof": true },
+              { "optionKey": "third", "optionName": "三等奖", "score": 6.0, "needProof": true },
+              { "optionKey": "participate", "optionName": "参与活动", "score": 4.0, "needProof": true }
             ]
           }
         ]

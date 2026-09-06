@@ -28,12 +28,16 @@ export class UploadController {
       storage: diskStorage({
         destination: UPLOAD_DIR,
         filename: (_req, file, cb) => {
-          const uniqueSuffix =
-            Date.now() + '-' + Math.round(Math.random() * 1e9);
+          const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
           const ext = extname(file.originalname);
-          // 文件名只使用时间戳和随机数，避免中文/特殊字符导致编码问题
-          // 原始文件名保存在返回数据中用于显示
-          cb(null, `${uniqueSuffix}${ext}`);
+          // 保留原始文件名（去除扩展名），添加时间戳避免重名
+          const originalBase = file.originalname.replace(ext, '');
+          // 处理中文文件名编码问题
+          const safeBase = originalBase
+            .replace(/[<>:"/\\|?*\x00-\x1F]/g, '_') // 移除非法字符
+            .replace(/\s+/g, '_') // 空格替换为下划线
+            .slice(0, 100); // 限制长度
+          cb(null, `${safeBase}_${uniqueSuffix}${ext}`);
         },
       }),
       limits: {

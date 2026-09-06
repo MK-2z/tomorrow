@@ -563,15 +563,7 @@ export class QualityEvalService {
           '当前记录不可修改，请等待审查结果',
         );
       }
-      if (currentStatus === 'needs_revision') {
-        const hasNeedsRevisionItem = Object.values(currentItemStatus)
-          .some((s: ItemReviewState) => s.status === 'needs_revision');
-        if (!hasNeedsRevisionItem) {
-          throw new BadRequestException(
-            '当前记录不在待修改状态，无法修改',
-          );
-        }
-      }
+      // needs_revision 状态允许学生修改，不要求必须有指标被标记为待修改
     }
 
     const patch: Partial<QualityEvalInsert> = {};

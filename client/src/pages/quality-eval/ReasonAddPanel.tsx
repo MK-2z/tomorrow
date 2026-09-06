@@ -126,9 +126,7 @@ const ReasonAddPanel: React.FC<ReasonAddPanelProps> = ({
     if (!skipLevel) return false;
     if (levelGroups.length !== 1) return false;
     const lg = levelGroups[0];
-    if (lg.options.length !== 1) return false;
-    const opt = lg.options[0];
-    return opt.optionKey === 'default' && opt.optionName === '标准';
+    return lg.options.length === 1;
   }, [skipLevel, levelGroups]);
 
   // 选择项目时根据结构自动填充 level/option
@@ -156,17 +154,20 @@ const ReasonAddPanel: React.FC<ReasonAddPanelProps> = ({
   // 是否是志愿服务项目（双条件分级，次数×时长，存在不满足加分条件的组合）
   const isVolunteerService = selectedProject?.projectKey === 'volunteer-service';
 
-  // 是否满足加分条件：选中组合的 score > 0 才满足
-  const meetsAddCondition = selectedOption ? selectedOption.score > 0 : true;
+  // 是否满足加分条件：仅志愿服务项目需要检查 score > 0（存在0分组合）
+  // 其他项目只要选中选项就满足条件（包括负向分，配置中score为正数）
+  const meetsAddCondition = isVolunteerService
+    ? selectedOption
+      ? selectedOption.score > 0
+      : true
+    : true;
 
-  // 是否是单标准单一加分项目（项目单一且加分标准单一，无需证明）
+  // 是否是单标准单一加分项目（项目单一且加分标准单一）
   const isSingleStandardProject = useMemo((): boolean => {
     if (!selectedProject) return false;
     if (levelGroups.length !== 1) return false;
     const lg = levelGroups[0];
-    if (lg.options.length !== 1) return false;
-    const opt = lg.options[0];
-    return opt.optionKey === 'default' && opt.optionName === '标准';
+    return lg.options.length === 1;
   }, [selectedProject, levelGroups]);
 
   const allSelected = Boolean(
