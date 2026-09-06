@@ -758,6 +758,7 @@
         "projectName": "体育竞赛",
         "remark": "1.参加体育比赛其他名次累计不超过8分；\n2.如破校纪录额外+2，院纪录额外+1；趣味项目加分减半；\n3.市级比赛经学院学生工作领导小组认定给予加分；\n4.比赛项目为团体的，所有成员均加分；\n5.其他可认定的项目，根据相关活动通知执行加分；\n6.所有项目可叠加。",
         "type": "positive",
+        "repeatable": true,
         "levelGroups": [
           {
             "levelKey": "city-above",
@@ -865,6 +866,7 @@
         "projectName": "仪容仪表（海上专业）",
         "remark": "1.基础分5分。扣分按次数记，可叠加，不为负分。\n2.其他经学院学生工作领导小组认定的扣分情形，经评议可适当给予扣分。",
         "type": "negative",
+        "repeatable": true,
         "levelGroups": [
           {
             "levelKey": "default",
@@ -926,6 +928,7 @@
         "projectName": "文艺比赛",
         "remark": "1.参加文艺比赛其他名次、积极参加活动的，累计不超过8分；\n2.市级比赛经学院学生工作领导小组认定给予加分；\n3.比赛项目为团体的，所有成员均加分；\n4.其他可认定的项目，根据相关活动通知执行加分；\n5.视频拍摄、演讲比赛、团体操比赛、啦啦操比赛的活动，经学院学生工作领导小组认定给予加分；\n6.所有项目可叠加。",
         "type": "positive",
+        "repeatable": true,
         "levelGroups": [
           {
             "levelKey": "city-above",
@@ -1148,6 +1151,7 @@
         "projectName": "文明宿舍、百佳宿舍",
         "remark": "分值说明：3（+1/次）。1.集体荣誉，成员均加（扣）分。扣分按次数记，可叠加，不为负分；\n2.其他可认定的项目，根据相关活动通知执行加分；\n3.其他经学院学生工作领导小组认定的扣分情形，经评议可适当给予扣分。",
         "type": "positive",
+        "repeatable": true,
         "levelGroups": [
           {
             "levelKey": "school-above",
