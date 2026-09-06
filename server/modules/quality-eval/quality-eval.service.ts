@@ -1395,54 +1395,30 @@ export class QualityEvalService {
       reviewerId,
     );
 
-    // 标记原因级待修改时不改变整体记录状态，只有点击"打回"才会改变整体状态
-    let nextEval: EvalDataJson;
-    let updateSet: Partial<QualityEvalInsert>;
+    const overallStatus = this.computeOverallReviewStatus(
+      nextItemStatus,
+      allItemKeys,
+    );
 
-    if (dto.status === 'needs_revision') {
-      // 标记原因级待修改：只更新原因状态和指标状态，不改变整体状态
-      nextEval = {
-        ...currentEval,
-        review: {
-          status: currentEval.review?.status ?? 'pending',
-          comment: currentEval.review?.comment,
-          reviewedAt: currentEval.review?.reviewedAt,
-          reviewedBy: currentEval.review?.reviewedBy,
-        },
-      };
-      updateSet = {
-        reviewReasonStatus: nextReasonStatus,
-        reviewItemStatus: nextItemStatus,
-        evalData: nextEval,
-        updatedAt: new Date(),
-      };
-    } else {
-      // 标记通过或其他状态：重新计算整体状态
-      const overallStatus = this.computeOverallReviewStatus(
-        nextItemStatus,
-        allItemKeys,
-      );
+    const nextEval: EvalDataJson = {
+      ...currentEval,
+      review: {
+        status: overallStatus,
+        comment: currentEval.review?.comment,
+        reviewedAt: nowIso,
+        reviewedBy: reviewerId,
+      },
+    };
 
-      nextEval = {
-        ...currentEval,
-        review: {
-          status: overallStatus,
-          comment: currentEval.review?.comment,
-          reviewedAt: nowIso,
-          reviewedBy: reviewerId,
-        },
-      };
+    const updateSet: Partial<QualityEvalInsert> = {
+      reviewReasonStatus: nextReasonStatus,
+      reviewItemStatus: nextItemStatus,
+      evalData: nextEval,
+      updatedAt: new Date(),
+    };
 
-      updateSet = {
-        reviewReasonStatus: nextReasonStatus,
-        reviewItemStatus: nextItemStatus,
-        evalData: nextEval,
-        updatedAt: new Date(),
-      };
-
-      if (overallStatus === 'needs_revision') {
-        updateSet.resubmitted = false;
-      }
+    if (overallStatus === 'needs_revision') {
+      updateSet.resubmitted = false;
     }
 
     const updated = await this.db
