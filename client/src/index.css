@@ -3,4 +3,3 @@
 @import "./typography.css";
 
 @source "./**/*.{js,ts,jsx,tsx}";
-@source "../**/*.{js,ts,jsx,tsx}";
