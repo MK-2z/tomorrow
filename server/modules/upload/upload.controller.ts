@@ -29,10 +29,12 @@ export class UploadController {
         destination: UPLOAD_DIR,
         filename: (_req, file, cb) => {
           const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
-          const ext = extname(file.originalname);
+          // 修复 multer 中文文件名编码问题：从 Latin1 转换为 UTF-8
+          const originalname = Buffer.from(file.originalname, 'latin1').toString('utf8');
+          const ext = extname(originalname);
           // 保留原始文件名（去除扩展名），添加时间戳避免重名
-          const originalBase = file.originalname.replace(ext, '');
-          // 处理中文文件名编码问题
+          const originalBase = originalname.replace(ext, '');
+          // 处理文件名中的非法字符
           const safeBase = originalBase
             .replace(/[<>:"/\\|?*\x00-\x1F]/g, '_') // 移除非法字符
             .replace(/\s+/g, '_') // 空格替换为下划线
@@ -91,15 +93,18 @@ export class UploadController {
       throw new BadRequestException('请选择要上传的文件');
     }
 
+    // 修复中文文件名编码：从 Latin1 转换为 UTF-8
+    const originalName = Buffer.from(file.originalname, 'latin1').toString('utf8');
+
     this.logger.log(
-      `文件上传成功: ${file.originalname} -> ${file.filename} (${(file.size / 1024).toFixed(1)} KB)`,
+      `文件上传成功: ${originalName} -> ${file.filename} (${(file.size / 1024).toFixed(1)} KB)`,
     );
 
     return {
       success: true,
       data: {
         url: `/uploads/${file.filename}`,
-        name: file.originalname,
+        name: originalName,
         size: file.size,
       },
     };
