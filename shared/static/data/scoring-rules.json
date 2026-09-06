@@ -254,6 +254,7 @@
         "projectName": "非法浏览境外网站、发表（参与）不当言论等行为",
         "remark": "以学院、学校等的通报的名单为准。可按次数累计。",
         "type": "negative",
+        "repeatable": true,
         "levelGroups": [
           {
             "levelKey": "default",
@@ -369,6 +370,7 @@
         "projectName": "院、校的通报或处分",
         "remark": "基础分5分。扣分按次数记，可叠加，不为负分。\n其他经学院学生工作领导小组认定的扣分情形，经评议可适当给予扣分。",
         "type": "negative",
+        "repeatable": true,
         "levelGroups": [
           {
             "levelKey": "default",
@@ -399,6 +401,7 @@
         "projectName": "中队通报",
         "remark": "分值说明：第一次：-1\n第二次：-2\n第三次：此项为0分",
         "type": "negative",
+        "repeatable": true,
         "levelGroups": [
           {
             "levelKey": "default",
@@ -445,6 +448,7 @@
         "projectName": "旷课、迟到、早退等行为",
         "remark": "可按次数累计。",
         "type": "negative",
+        "repeatable": true,
         "levelGroups": [
           {
             "levelKey": "default",
@@ -705,6 +709,7 @@
         "projectName": "半军管或早点名、升旗仪式",
         "remark": "基础分5分。扣分按次数记，可叠加，不为负分。\n其他经学院学生工作领导小组认定的扣分情形，经评议可适当给予扣分。",
         "type": "negative",
+        "repeatable": true,
         "levelGroups": [
           {
             "levelKey": "default",
@@ -1370,10 +1375,13 @@
         "type": "positive",
         "levelGroups": [
           {
-            "levelKey": "default",
-            "levelName": "标准",
+            "levelKey": "rating-level",
+            "levelName": "评定等级",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": true }
+              { "optionKey": "excellent", "optionName": "优秀", "score": 5.0, "needProof": true },
+              { "optionKey": "good", "optionName": "良好", "score": 3.0, "needProof": true },
+              { "optionKey": "qualified", "optionName": "合格", "score": 1.0, "needProof": true },
+              { "optionKey": "unqualified", "optionName": "不合格", "score": 0, "needProof": true }
             ]
           }
         ]
@@ -1447,10 +1455,13 @@
         "type": "positive",
         "levelGroups": [
           {
-            "levelKey": "default",
-            "levelName": "标准",
+            "levelKey": "award-level",
+            "levelName": "奖项等级",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": true }
+              { "optionKey": "first", "optionName": "一等奖", "score": 5.0, "needProof": true },
+              { "optionKey": "second", "optionName": "二等奖", "score": 4.0, "needProof": true },
+              { "optionKey": "third", "optionName": "三等奖", "score": 3.0, "needProof": true },
+              { "optionKey": "participate", "optionName": "参与活动", "score": 2.0, "needProof": true }
             ]
           }
         ]
