@@ -5,6 +5,8 @@
 } from '@shared/api.interface';
 
 export const BASE_SCORE_ITEMS: Record<string, number> = {
+  'ideological-politics': 3,
+  'moral': 2,
   'law-abiding': 5,
   'physical-health': 5,
   'civilized': 5,
@@ -117,20 +119,35 @@ export function getTotalRows(cats: EvalCategory[]): number {
 }
 
 export function computeItemScore(
-  item: { reasons: Array<{ score?: number }> },
+  item: { reasons: Array<{ score?: number; type?: string }> },
   itemKey?: string,
+  itemMaxScore?: number,
 ): number {
-  const raw: number = item.reasons.reduce(
-    (s: number, r: { score?: number }) => s + (Number(r.score) || 0),
-    0,
-  );
+  // 区分正向分和负向分
+  let positiveSum = 0;
+  let negativeSum = 0;
+  for (const r of item.reasons) {
+    const score = Number(r.score) || 0;
+    if (score >= 0) {
+      positiveSum += score;
+    } else {
+      negativeSum += score;
+    }
+  }
   const base: number = itemKey ? BASE_SCORE_ITEMS[itemKey] ?? 0 : 0;
-  return Math.max(0, raw + base);
+  // 正向部分超上限时只封顶正向（上限 - 基础分），负向照常扣
+  if (itemMaxScore !== undefined && itemMaxScore > 0 && base > 0) {
+    const positiveCap = itemMaxScore - base;
+    if (positiveCap > 0 && positiveSum > positiveCap) {
+      positiveSum = positiveCap;
+    }
+  }
+  return Math.max(0, positiveSum + negativeSum + base);
 }
 
 export function computeCategoryScore(cat: EvalCategory): number {
   return cat.items.reduce(
-    (s: number, item: EvalItem) => s + computeItemScore(item, item.itemKey),
+    (s: number, item: EvalItem) => s + computeItemScore(item, item.itemKey, item.itemMaxScore),
     0,
   );
 }
@@ -157,7 +174,7 @@ export function normalizeEvalRecordScores(record: QualityEvalRecord): QualityEva
   const categories: EvalCategory[] = record.categories.map((cat: EvalCategory) => {
     const items: EvalItem[] = cat.items.map((item: EvalItem) => ({
       ...item,
-      itemScore: computeItemScore(item, item.itemKey),
+      itemScore: computeItemScore(item, item.itemKey, item.itemMaxScore),
     }));
     return {
       ...cat,

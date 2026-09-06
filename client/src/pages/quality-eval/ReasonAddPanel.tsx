@@ -151,6 +151,19 @@ const ReasonAddPanel: React.FC<ReasonAddPanelProps> = ({
     }
   }, [selectedProject, skipOption, skipLevel, levelGroups]);
 
+  // 选择级别后，如果该级别下只有一个"标准"选项，自动填充
+  useEffect(() => {
+    if (!selectedProject || !selectedLevel) return;
+    if (skipLevel) return; // 单级别项目已在上面处理
+    const optionsInLevel = selectedLevel.options;
+    if (optionsInLevel.length === 1 && optionsInLevel[0].optionKey === 'default' && optionsInLevel[0].optionName === '标准') {
+      setStdForm((prev) => {
+        if (prev.optionKey === optionsInLevel[0].optionKey) return prev;
+        return { ...prev, optionKey: optionsInLevel[0].optionKey };
+      });
+    }
+  }, [selectedProject, selectedLevel, skipLevel]);
+
   // 是否是志愿服务项目（双条件分级，次数×时长，存在不满足加分条件的组合）
   const isVolunteerService = selectedProject?.projectKey === 'volunteer-service';
 

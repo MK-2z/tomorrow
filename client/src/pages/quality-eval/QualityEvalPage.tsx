@@ -311,7 +311,7 @@ const QualityEvalPage: React.FC = () => {
                   : {
                       ...item,
                       reasons,
-                      itemScore: computeItemScore({ ...item, reasons }, item.itemKey),
+                      itemScore: computeItemScore({ ...item, reasons }, item.itemKey, item.itemMaxScore),
                     },
               ),
             },
@@ -366,7 +366,7 @@ const QualityEvalPage: React.FC = () => {
       categoryScore: computeCategoryScore(cat),
 items: cat.items.map((item: EvalItem) => ({
          ...item,
-         itemScore: computeItemScore(item, item.itemKey),
+         itemScore: computeItemScore(item, item.itemKey, item.itemMaxScore),
       })),
     }));
 
@@ -602,7 +602,7 @@ items: cat.items.map((item: EvalItem) => ({
                      const isFirstRow = catIdx === 0 && itemIdx === 0;
                      const rowIndex = catStartIndices[catIdx] + itemIdx;
                      const isEvenRow = rowIndex % 2 === 1;
-                     const itemScore = computeItemScore(item, item.itemKey);
+                     const itemScore = computeItemScore(item, item.itemKey, item.itemMaxScore);
                      const catScore = computeCategoryScore(cat);
                      const isNegativeItem = itemScore < 0;
                      const isOverLimit =
