@@ -179,6 +179,13 @@ const ReasonAddPanel: React.FC<ReasonAddPanelProps> = ({
 
   const handleTabChange = (value: string): void => {
     setTab(value as TabType);
+    // 切换正向/负向分时，同步更新 stdForm.type 并重置表单选择
+    if (value === 'positive' || value === 'negative') {
+      setStdForm({
+        ...DEFAULT_STANDARD,
+        type: value as 'positive' | 'negative',
+      });
+    }
   };
 
   const handleStdTypeChange = (type: string): void => {
