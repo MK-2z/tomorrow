@@ -1278,17 +1278,13 @@
         "type": "positive",
         "levelGroups": [
           {
-            "levelKey": "school",
-            "levelName": "校级",
+            "levelKey": "rating-level",
+            "levelName": "评定等级",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 10.0, "needProof": true }
-            ]
-          },
-          {
-            "levelKey": "college",
-            "levelName": "院级",
-            "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 10.0, "needProof": true }
+              { "optionKey": "excellent", "optionName": "优秀", "score": 10.0, "needProof": true },
+              { "optionKey": "good", "optionName": "良好", "score": 9.0, "needProof": true },
+              { "optionKey": "qualified", "optionName": "合格", "score": 6.0, "needProof": true },
+              { "optionKey": "unqualified", "optionName": "不合格", "score": 0, "needProof": true }
             ]
           }
         ]
@@ -1300,10 +1296,13 @@
         "type": "positive",
         "levelGroups": [
           {
-            "levelKey": "default",
-            "levelName": "标准",
+            "levelKey": "rating-level",
+            "levelName": "评定等级",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 10.0, "needProof": true }
+              { "optionKey": "excellent", "optionName": "优秀", "score": 10.0, "needProof": true },
+              { "optionKey": "good", "optionName": "良好", "score": 8.0, "needProof": true },
+              { "optionKey": "qualified", "optionName": "合格", "score": 5.0, "needProof": true },
+              { "optionKey": "unqualified", "optionName": "不合格", "score": 0, "needProof": true }
             ]
           }
         ]
@@ -1315,10 +1314,13 @@
         "type": "positive",
         "levelGroups": [
           {
-            "levelKey": "default",
-            "levelName": "标准",
+            "levelKey": "rating-level",
+            "levelName": "评定等级",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 10.0, "needProof": true }
+              { "optionKey": "excellent", "optionName": "优秀", "score": 10.0, "needProof": true },
+              { "optionKey": "good", "optionName": "良好", "score": 7.0, "needProof": true },
+              { "optionKey": "qualified", "optionName": "合格", "score": 5.0, "needProof": true },
+              { "optionKey": "unqualified", "optionName": "不合格", "score": 0, "needProof": true }
             ]
           }
         ]
@@ -1330,10 +1332,13 @@
         "type": "positive",
         "levelGroups": [
           {
-            "levelKey": "default",
-            "levelName": "标准",
+            "levelKey": "rating-level",
+            "levelName": "评定等级",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 9.0, "needProof": true }
+              { "optionKey": "excellent", "optionName": "优秀", "score": 9.0, "needProof": true },
+              { "optionKey": "good", "optionName": "良好", "score": 6.0, "needProof": true },
+              { "optionKey": "qualified", "optionName": "合格", "score": 4.0, "needProof": true },
+              { "optionKey": "unqualified", "optionName": "不合格", "score": 0, "needProof": true }
             ]
           }
         ]
@@ -1345,10 +1350,13 @@
         "type": "positive",
         "levelGroups": [
           {
-            "levelKey": "default",
-            "levelName": "标准",
+            "levelKey": "rating-level",
+            "levelName": "评定等级",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 8.0, "needProof": true }
+              { "optionKey": "excellent", "optionName": "优秀", "score": 8.0, "needProof": true },
+              { "optionKey": "good", "optionName": "良好", "score": 5.0, "needProof": true },
+              { "optionKey": "qualified", "optionName": "合格", "score": 3.0, "needProof": true },
+              { "optionKey": "unqualified", "optionName": "不合格", "score": 0, "needProof": true }
             ]
           }
         ]
@@ -1360,10 +1368,13 @@
         "type": "positive",
         "levelGroups": [
           {
-            "levelKey": "default",
-            "levelName": "标准",
+            "levelKey": "rating-level",
+            "levelName": "评定等级",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 6.0, "needProof": true }
+              { "optionKey": "excellent", "optionName": "优秀", "score": 6.0, "needProof": true },
+              { "optionKey": "good", "optionName": "良好", "score": 4.0, "needProof": true },
+              { "optionKey": "qualified", "optionName": "合格", "score": 2.0, "needProof": true },
+              { "optionKey": "unqualified", "optionName": "不合格", "score": 0, "needProof": true }
             ]
           }
         ]

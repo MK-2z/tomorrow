@@ -136,10 +136,14 @@ export function computeItemScore(
   }
   const base: number = itemKey ? BASE_SCORE_ITEMS[itemKey] ?? 0 : 0;
   // 正向部分超上限时只封顶正向（上限 - 基础分），负向照常扣
-  if (itemMaxScore !== undefined && itemMaxScore > 0 && base > 0) {
+  // 不管有没有基础分，只要设置了上限就需要封顶
+  if (itemMaxScore !== undefined && itemMaxScore > 0) {
     const positiveCap = itemMaxScore - base;
     if (positiveCap > 0 && positiveSum > positiveCap) {
       positiveSum = positiveCap;
+    } else if (positiveCap <= 0 && positiveSum > 0) {
+      // 基础分已经达到或超过上限，正向分不计
+      positiveSum = 0;
     }
   }
   return Math.max(0, positiveSum + negativeSum + base);
