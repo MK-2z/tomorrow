@@ -518,8 +518,8 @@ items: cat.items.map((item: EvalItem) => ({
             )}
 
             <div className="mb-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-            <div className="flex items-center gap-2">
-              <label className="w-16 shrink-0 text-sm font-medium text-muted-foreground">
+            <div className="space-y-1.5">
+              <label className="text-sm font-medium text-muted-foreground">
                 学号
               </label>
                <Input
@@ -529,10 +529,11 @@ items: cat.items.map((item: EvalItem) => ({
                  }
                  placeholder="请输入学号"
                   readOnly={pageReadOnly || Boolean(studentIdReadOnly)}
+                  className="w-full"
                 />
              </div>
-             <div className="flex items-center gap-2">
-               <label className="w-16 shrink-0 text-sm font-medium text-muted-foreground">
+             <div className="space-y-1.5">
+               <label className="text-sm font-medium text-muted-foreground">
                  班级
                </label>
                 <Input
@@ -542,10 +543,11 @@ items: cat.items.map((item: EvalItem) => ({
                   }
                   placeholder="请输入班级"
                   readOnly={pageReadOnly}
+                  className="w-full"
                 />
              </div>
-             <div className="flex items-center gap-2">
-               <label className="w-16 shrink-0 text-sm font-medium text-muted-foreground">
+             <div className="space-y-1.5">
+               <label className="text-sm font-medium text-muted-foreground">
                  姓名
                </label>
                 <Input
@@ -555,6 +557,7 @@ items: cat.items.map((item: EvalItem) => ({
                   }
                   placeholder="请输入姓名"
                   readOnly={pageReadOnly}
+                  className="w-full"
                 />
             </div>
 
