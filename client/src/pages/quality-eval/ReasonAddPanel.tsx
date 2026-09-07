@@ -287,7 +287,7 @@ const ReasonAddPanel: React.FC<ReasonAddPanelProps> = ({
       optionName: selectedOption!.optionName,
       remark: stdForm.remark.trim(),
       needProof:
-        stdForm.type === 'positive' && !isSingleStandardProject,
+        stdForm.type === 'positive',
       isCustom: false,
       isPendingReview: false,
       count: selectedProject?.repeatable ? count : undefined,
@@ -446,7 +446,7 @@ const ReasonAddPanel: React.FC<ReasonAddPanelProps> = ({
                 {selectedProject.remark}
               </div>
             )}
-            {stdForm.type === 'positive' && !isSingleStandardProject && allSelected && selectedProject && (
+            {stdForm.type === 'positive' && allSelected && selectedProject && (
               <div className="flex items-center gap-1 text-xs text-rose-600">
                 <AlertTriangle className="h-3 w-3" />
                 <span>该项目需上传证明文件</span>

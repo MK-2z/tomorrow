@@ -15,21 +15,36 @@
             "levelKey": "provincial-above",
             "levelName": "省级及以上",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 8.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 8,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "school",
             "levelName": "校级",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 6.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 6,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "college",
             "levelName": "院级",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 5,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -44,21 +59,36 @@
             "levelKey": "provincial-above",
             "levelName": "省级及以上",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 7.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 7,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "school",
             "levelName": "校级",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 5,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "college",
             "levelName": "院级",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 3.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 3,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -73,21 +103,36 @@
             "levelKey": "provincial-above",
             "levelName": "省级及以上",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 6.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 6,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "school",
             "levelName": "校级",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 4.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 4,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "college",
             "levelName": "院级",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 2,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -102,21 +147,36 @@
             "levelKey": "provincial-above",
             "levelName": "省级及以上",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 5,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "school",
             "levelName": "校级",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 4.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 4,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "college",
             "levelName": "院级",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 2,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -131,21 +191,36 @@
             "levelKey": "provincial-above",
             "levelName": "省级及以上",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 4.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 4,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "school",
             "levelName": "校级",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 3.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 3,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "college",
             "levelName": "院级",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 2,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -160,7 +235,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 2,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -175,7 +255,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 1.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 1,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -191,7 +276,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 2,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -207,14 +297,24 @@
             "levelKey": "cnki",
             "levelName": "可“中国知网”可检索",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 5,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "ordinary-cn",
             "levelName": "普通CN期刊",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 3.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 3,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -229,7 +329,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 3.0, "needProof": false }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 3,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -244,7 +349,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 5,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -260,7 +370,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": false }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 2,
+                "needProof": false
+              }
             ]
           }
         ]
@@ -275,7 +390,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 1.0, "needProof": false }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 1,
+                "needProof": false
+              }
             ]
           }
         ]
@@ -307,7 +427,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 2,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -322,14 +447,24 @@
             "levelKey": "college",
             "levelName": "院级表彰",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 2,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "school-above",
             "levelName": "校级及以上表彰",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 3.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 3,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -344,7 +479,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 2,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -376,7 +516,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": false }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 5,
+                "needProof": false
+              }
             ]
           }
         ]
@@ -391,7 +536,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": false }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 5,
+                "needProof": false
+              }
             ]
           }
         ]
@@ -407,7 +557,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": false }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 2,
+                "needProof": false
+              }
             ]
           }
         ]
@@ -438,7 +593,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": false }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 5,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -454,8 +614,18 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "absent", "optionName": "旷课", "score": 1.0, "needProof": false },
-              { "optionKey": "tardiness", "optionName": "迟到、早退", "score": 0.5, "needProof": false }
+              {
+                "optionKey": "absent",
+                "optionName": "旷课",
+                "score": 1,
+                "needProof": false
+              },
+              {
+                "optionKey": "tardiness",
+                "optionName": "迟到、早退",
+                "score": 0.5,
+                "needProof": false
+              }
             ]
           }
         ]
@@ -470,7 +640,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 0.5, "needProof": false }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 0.5,
+                "needProof": false
+              }
             ]
           }
         ]
@@ -501,40 +676,120 @@
             "levelKey": "national",
             "levelName": "国家级",
             "options": [
-              { "optionKey": "first", "optionName": "一等奖", "score": 12.0, "needProof": true },
-              { "optionKey": "second", "optionName": "二等奖", "score": 11.0, "needProof": true },
-              { "optionKey": "third", "optionName": "三等奖", "score": 10.0, "needProof": true },
-              { "optionKey": "project-approved", "optionName": "立项结项", "score": 5.0, "needProof": true }
+              {
+                "optionKey": "first",
+                "optionName": "一等奖",
+                "score": 12,
+                "needProof": true
+              },
+              {
+                "optionKey": "second",
+                "optionName": "二等奖",
+                "score": 11,
+                "needProof": true
+              },
+              {
+                "optionKey": "third",
+                "optionName": "三等奖",
+                "score": 10,
+                "needProof": true
+              },
+              {
+                "optionKey": "project-approved",
+                "optionName": "立项结项",
+                "score": 5,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "provincial",
             "levelName": "省级",
             "options": [
-              { "optionKey": "first", "optionName": "一等奖", "score": 9.0, "needProof": true },
-              { "optionKey": "second", "optionName": "二等奖", "score": 8.0, "needProof": true },
-              { "optionKey": "third", "optionName": "三等奖", "score": 7.0, "needProof": true },
-              { "optionKey": "participate", "optionName": "代表学院参加未获奖", "score": 2.0, "needProof": true }
+              {
+                "optionKey": "first",
+                "optionName": "一等奖",
+                "score": 9,
+                "needProof": true
+              },
+              {
+                "optionKey": "second",
+                "optionName": "二等奖",
+                "score": 8,
+                "needProof": true
+              },
+              {
+                "optionKey": "third",
+                "optionName": "三等奖",
+                "score": 7,
+                "needProof": true
+              },
+              {
+                "optionKey": "participate",
+                "optionName": "代表学院参加未获奖",
+                "score": 2,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "school",
             "levelName": "校级",
             "options": [
-              { "optionKey": "first", "optionName": "一等奖", "score": 6.0, "needProof": true },
-              { "optionKey": "second", "optionName": "二等奖", "score": 5.0, "needProof": true },
-              { "optionKey": "third", "optionName": "三等奖", "score": 4.0, "needProof": true },
-              { "optionKey": "project-approved", "optionName": "立项结项", "score": 3.0, "needProof": true },
-              { "optionKey": "participate", "optionName": "参加未获奖", "score": 1.0, "needProof": true }
+              {
+                "optionKey": "first",
+                "optionName": "一等奖",
+                "score": 6,
+                "needProof": true
+              },
+              {
+                "optionKey": "second",
+                "optionName": "二等奖",
+                "score": 5,
+                "needProof": true
+              },
+              {
+                "optionKey": "third",
+                "optionName": "三等奖",
+                "score": 4,
+                "needProof": true
+              },
+              {
+                "optionKey": "project-approved",
+                "optionName": "立项结项",
+                "score": 3,
+                "needProof": true
+              },
+              {
+                "optionKey": "participate",
+                "optionName": "参加未获奖",
+                "score": 1,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "college",
             "levelName": "院级",
             "options": [
-              { "optionKey": "first", "optionName": "一等奖", "score": 3.0, "needProof": true },
-              { "optionKey": "second", "optionName": "二等奖", "score": 2.0, "needProof": true },
-              { "optionKey": "third", "optionName": "三等奖", "score": 1.0, "needProof": true }
+              {
+                "optionKey": "first",
+                "optionName": "一等奖",
+                "score": 3,
+                "needProof": true
+              },
+              {
+                "optionKey": "second",
+                "optionName": "二等奖",
+                "score": 2,
+                "needProof": true
+              },
+              {
+                "optionKey": "third",
+                "optionName": "三等奖",
+                "score": 1,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -549,36 +804,96 @@
             "levelKey": "national",
             "levelName": "国家级",
             "options": [
-              { "optionKey": "first", "optionName": "一等奖", "score": 10.0, "needProof": true },
-              { "optionKey": "second", "optionName": "二等奖", "score": 9.5, "needProof": true },
-              { "optionKey": "third", "optionName": "三等奖", "score": 9.0, "needProof": true }
+              {
+                "optionKey": "first",
+                "optionName": "一等奖",
+                "score": 10,
+                "needProof": true
+              },
+              {
+                "optionKey": "second",
+                "optionName": "二等奖",
+                "score": 9.5,
+                "needProof": true
+              },
+              {
+                "optionKey": "third",
+                "optionName": "三等奖",
+                "score": 9,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "provincial",
             "levelName": "省级",
             "options": [
-              { "optionKey": "first", "optionName": "一等奖", "score": 6.0, "needProof": true },
-              { "optionKey": "second", "optionName": "二等奖", "score": 5.5, "needProof": true },
-              { "optionKey": "third", "optionName": "三等奖", "score": 5.0, "needProof": true }
+              {
+                "optionKey": "first",
+                "optionName": "一等奖",
+                "score": 6,
+                "needProof": true
+              },
+              {
+                "optionKey": "second",
+                "optionName": "二等奖",
+                "score": 5.5,
+                "needProof": true
+              },
+              {
+                "optionKey": "third",
+                "optionName": "三等奖",
+                "score": 5,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "school",
             "levelName": "校级",
             "options": [
-              { "optionKey": "first", "optionName": "一等奖", "score": 4.0, "needProof": true },
-              { "optionKey": "second", "optionName": "二等奖", "score": 3.5, "needProof": true },
-              { "optionKey": "third", "optionName": "三等奖", "score": 3.0, "needProof": true }
+              {
+                "optionKey": "first",
+                "optionName": "一等奖",
+                "score": 4,
+                "needProof": true
+              },
+              {
+                "optionKey": "second",
+                "optionName": "二等奖",
+                "score": 3.5,
+                "needProof": true
+              },
+              {
+                "optionKey": "third",
+                "optionName": "三等奖",
+                "score": 3,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "college",
             "levelName": "院级",
             "options": [
-              { "optionKey": "first", "optionName": "一等奖", "score": 2.5, "needProof": true },
-              { "optionKey": "second", "optionName": "二等奖", "score": 2.0, "needProof": true },
-              { "optionKey": "third", "optionName": "三等奖", "score": 1.5, "needProof": true }
+              {
+                "optionKey": "first",
+                "optionName": "一等奖",
+                "score": 2.5,
+                "needProof": true
+              },
+              {
+                "optionKey": "second",
+                "optionName": "二等奖",
+                "score": 2,
+                "needProof": true
+              },
+              {
+                "optionKey": "third",
+                "optionName": "三等奖",
+                "score": 1.5,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -593,36 +908,96 @@
             "levelKey": "national",
             "levelName": "国家级",
             "options": [
-              { "optionKey": "first", "optionName": "一等奖", "score": 7.0, "needProof": true },
-              { "optionKey": "second", "optionName": "二等奖", "score": 6.5, "needProof": true },
-              { "optionKey": "third", "optionName": "三等奖", "score": 6.0, "needProof": true }
+              {
+                "optionKey": "first",
+                "optionName": "一等奖",
+                "score": 7,
+                "needProof": true
+              },
+              {
+                "optionKey": "second",
+                "optionName": "二等奖",
+                "score": 6.5,
+                "needProof": true
+              },
+              {
+                "optionKey": "third",
+                "optionName": "三等奖",
+                "score": 6,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "provincial",
             "levelName": "省级",
             "options": [
-              { "optionKey": "first", "optionName": "一等奖", "score": 5.0, "needProof": true },
-              { "optionKey": "second", "optionName": "二等奖", "score": 4.5, "needProof": true },
-              { "optionKey": "third", "optionName": "三等奖", "score": 4.0, "needProof": true }
+              {
+                "optionKey": "first",
+                "optionName": "一等奖",
+                "score": 5,
+                "needProof": true
+              },
+              {
+                "optionKey": "second",
+                "optionName": "二等奖",
+                "score": 4.5,
+                "needProof": true
+              },
+              {
+                "optionKey": "third",
+                "optionName": "三等奖",
+                "score": 4,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "school",
             "levelName": "校级",
             "options": [
-              { "optionKey": "first", "optionName": "一等奖", "score": 3.0, "needProof": true },
-              { "optionKey": "second", "optionName": "二等奖", "score": 2.5, "needProof": true },
-              { "optionKey": "third", "optionName": "三等奖", "score": 2.0, "needProof": true }
+              {
+                "optionKey": "first",
+                "optionName": "一等奖",
+                "score": 3,
+                "needProof": true
+              },
+              {
+                "optionKey": "second",
+                "optionName": "二等奖",
+                "score": 2.5,
+                "needProof": true
+              },
+              {
+                "optionKey": "third",
+                "optionName": "三等奖",
+                "score": 2,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "college",
             "levelName": "院级",
             "options": [
-              { "optionKey": "first", "optionName": "一等奖", "score": 2.0, "needProof": true },
-              { "optionKey": "second", "optionName": "二等奖", "score": 1.5, "needProof": true },
-              { "optionKey": "third", "optionName": "三等奖", "score": 1.0, "needProof": true }
+              {
+                "optionKey": "first",
+                "optionName": "一等奖",
+                "score": 2,
+                "needProof": true
+              },
+              {
+                "optionKey": "second",
+                "optionName": "二等奖",
+                "score": 1.5,
+                "needProof": true
+              },
+              {
+                "optionKey": "third",
+                "optionName": "三等奖",
+                "score": 1,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -638,21 +1013,36 @@
             "levelKey": "journal-one",
             "levelName": "一类学术刊物",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 10.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 10,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "journal-two",
             "levelName": "二类学术刊物",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 8.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 8,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "journal-three",
             "levelName": "三类学术刊物",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 6.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 6,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -668,7 +1058,12 @@
             "levelKey": "invention",
             "levelName": "发明专利",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 8.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 8,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -683,7 +1078,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 0, "needProof": false }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 0,
+                "needProof": false
+              }
             ]
           }
         ]
@@ -715,9 +1115,24 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "leave-over-five", "optionName": "请假超五次（公假除外）", "score": 0.5, "needProof": false },
-              { "optionKey": "absent-drill", "optionName": "旷操、旷早点名", "score": 1.0, "needProof": false },
-              { "optionKey": "absent-flag", "optionName": "旷升旗", "score": 2.0, "needProof": false }
+              {
+                "optionKey": "leave-over-five",
+                "optionName": "请假超五次（公假除外）",
+                "score": 0.5,
+                "needProof": false
+              },
+              {
+                "optionKey": "absent-drill",
+                "optionName": "旷操、旷早点名",
+                "score": 1,
+                "needProof": false
+              },
+              {
+                "optionKey": "absent-flag",
+                "optionName": "旷升旗",
+                "score": 2,
+                "needProof": false
+              }
             ]
           }
         ]
@@ -732,7 +1147,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": false }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 2,
+                "needProof": false
+              }
             ]
           }
         ]
@@ -764,36 +1184,126 @@
             "levelKey": "city-above",
             "levelName": "市级及以上",
             "options": [
-              { "optionKey": "champion", "optionName": "冠军/第一名", "score": 15.0, "needProof": true },
-              { "optionKey": "runner-up", "optionName": "亚军/第二名", "score": 14.0, "needProof": true },
-              { "optionKey": "third-place", "optionName": "季军/第三名", "score": 13.0, "needProof": true },
-              { "optionKey": "fourth-sixth", "optionName": "第四至六名", "score": 12.0, "needProof": true },
-              { "optionKey": "seventh-eighth", "optionName": "第七至八名", "score": 11.0, "needProof": true },
-              { "optionKey": "other", "optionName": "其他名次", "score": 10.0, "needProof": true }
+              {
+                "optionKey": "champion",
+                "optionName": "冠军/第一名",
+                "score": 15,
+                "needProof": true
+              },
+              {
+                "optionKey": "runner-up",
+                "optionName": "亚军/第二名",
+                "score": 14,
+                "needProof": true
+              },
+              {
+                "optionKey": "third-place",
+                "optionName": "季军/第三名",
+                "score": 13,
+                "needProof": true
+              },
+              {
+                "optionKey": "fourth-sixth",
+                "optionName": "第四至六名",
+                "score": 12,
+                "needProof": true
+              },
+              {
+                "optionKey": "seventh-eighth",
+                "optionName": "第七至八名",
+                "score": 11,
+                "needProof": true
+              },
+              {
+                "optionKey": "other",
+                "optionName": "其他名次",
+                "score": 10,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "school",
             "levelName": "校级",
             "options": [
-              { "optionKey": "champion", "optionName": "冠军/第一名", "score": 13.0, "needProof": true },
-              { "optionKey": "runner-up", "optionName": "亚军/第二名", "score": 12.0, "needProof": true },
-              { "optionKey": "third-place", "optionName": "季军/第三名", "score": 11.0, "needProof": true },
-              { "optionKey": "fourth-sixth", "optionName": "第四至六名", "score": 8.0, "needProof": true },
-              { "optionKey": "seventh-eighth", "optionName": "第七至八名", "score": 7.0, "needProof": true },
-              { "optionKey": "other", "optionName": "其他名次", "score": 5.0, "needProof": true }
+              {
+                "optionKey": "champion",
+                "optionName": "冠军/第一名",
+                "score": 13,
+                "needProof": true
+              },
+              {
+                "optionKey": "runner-up",
+                "optionName": "亚军/第二名",
+                "score": 12,
+                "needProof": true
+              },
+              {
+                "optionKey": "third-place",
+                "optionName": "季军/第三名",
+                "score": 11,
+                "needProof": true
+              },
+              {
+                "optionKey": "fourth-sixth",
+                "optionName": "第四至六名",
+                "score": 8,
+                "needProof": true
+              },
+              {
+                "optionKey": "seventh-eighth",
+                "optionName": "第七至八名",
+                "score": 7,
+                "needProof": true
+              },
+              {
+                "optionKey": "other",
+                "optionName": "其他名次",
+                "score": 5,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "college",
             "levelName": "院级",
             "options": [
-              { "optionKey": "champion", "optionName": "冠军/第一名", "score": 10.0, "needProof": true },
-              { "optionKey": "runner-up", "optionName": "亚军/第二名", "score": 9.0, "needProof": true },
-              { "optionKey": "third-place", "optionName": "季军/第三名", "score": 8.0, "needProof": true },
-              { "optionKey": "fourth-sixth", "optionName": "第四至六名", "score": 6.0, "needProof": true },
-              { "optionKey": "seventh-eighth", "optionName": "第七至八名", "score": 4.0, "needProof": true },
-              { "optionKey": "other", "optionName": "其他名次", "score": 3.0, "needProof": true }
+              {
+                "optionKey": "champion",
+                "optionName": "冠军/第一名",
+                "score": 10,
+                "needProof": true
+              },
+              {
+                "optionKey": "runner-up",
+                "optionName": "亚军/第二名",
+                "score": 9,
+                "needProof": true
+              },
+              {
+                "optionKey": "third-place",
+                "optionName": "季军/第三名",
+                "score": 8,
+                "needProof": true
+              },
+              {
+                "optionKey": "fourth-sixth",
+                "optionName": "第四至六名",
+                "score": 6,
+                "needProof": true
+              },
+              {
+                "optionKey": "seventh-eighth",
+                "optionName": "第七至八名",
+                "score": 4,
+                "needProof": true
+              },
+              {
+                "optionKey": "other",
+                "optionName": "其他名次",
+                "score": 3,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -809,8 +1319,18 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "individual", "optionName": "个人", "score": 1.0, "needProof": true },
-              { "optionKey": "collective", "optionName": "集体", "score": 10.0, "needProof": true }
+              {
+                "optionKey": "individual",
+                "optionName": "个人",
+                "score": 1,
+                "needProof": true
+              },
+              {
+                "optionKey": "collective",
+                "optionName": "集体",
+                "score": 1,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -825,7 +1345,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "qualified", "optionName": "积极参与训练且考核合格以上", "score": 2.0, "needProof": true }
+              {
+                "optionKey": "qualified",
+                "optionName": "积极参与训练且考核合格以上",
+                "score": 2,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -840,7 +1365,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "individual", "optionName": "个人", "score": 2.0, "needProof": false }
+              {
+                "optionKey": "individual",
+                "optionName": "个人",
+                "score": 2,
+                "needProof": false
+              }
             ]
           }
         ]
@@ -872,7 +1402,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "violation", "optionName": "着装、头发等不符合半军管规定的情形", "score": 1.0, "needProof": false }
+              {
+                "optionKey": "violation",
+                "optionName": "着装、头发等不符合半军管规定的情形",
+                "score": 1,
+                "needProof": false
+              }
             ]
           }
         ]
@@ -887,7 +1422,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": false }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 5,
+                "needProof": false
+              }
             ]
           }
         ]
@@ -902,7 +1442,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": false }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 5,
+                "needProof": false
+              }
             ]
           }
         ]
@@ -934,36 +1479,126 @@
             "levelKey": "city-above",
             "levelName": "市级及以上",
             "options": [
-              { "optionKey": "champion", "optionName": "冠军/第一名", "score": 15.0, "needProof": true },
-              { "optionKey": "runner-up", "optionName": "亚军/第二名", "score": 14.0, "needProof": true },
-              { "optionKey": "third-place", "optionName": "季军/第三名", "score": 13.0, "needProof": true },
-              { "optionKey": "fourth-sixth", "optionName": "第四至六名", "score": 12.0, "needProof": true },
-              { "optionKey": "seventh-eighth", "optionName": "第七至八名", "score": 11.0, "needProof": true },
-              { "optionKey": "other", "optionName": "其他名次", "score": 10.0, "needProof": true }
+              {
+                "optionKey": "champion",
+                "optionName": "冠军/第一名",
+                "score": 15,
+                "needProof": true
+              },
+              {
+                "optionKey": "runner-up",
+                "optionName": "亚军/第二名",
+                "score": 14,
+                "needProof": true
+              },
+              {
+                "optionKey": "third-place",
+                "optionName": "季军/第三名",
+                "score": 13,
+                "needProof": true
+              },
+              {
+                "optionKey": "fourth-sixth",
+                "optionName": "第四至六名",
+                "score": 12,
+                "needProof": true
+              },
+              {
+                "optionKey": "seventh-eighth",
+                "optionName": "第七至八名",
+                "score": 11,
+                "needProof": true
+              },
+              {
+                "optionKey": "other",
+                "optionName": "其他名次",
+                "score": 10,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "school",
             "levelName": "校级",
             "options": [
-              { "optionKey": "champion", "optionName": "冠军/第一名", "score": 13.0, "needProof": true },
-              { "optionKey": "runner-up", "optionName": "亚军/第二名", "score": 12.0, "needProof": true },
-              { "optionKey": "third-place", "optionName": "季军/第三名", "score": 11.0, "needProof": true },
-              { "optionKey": "fourth-sixth", "optionName": "第四至六名", "score": 8.0, "needProof": true },
-              { "optionKey": "seventh-eighth", "optionName": "第七至八名", "score": 7.0, "needProof": true },
-              { "optionKey": "other", "optionName": "其他名次", "score": 5.0, "needProof": true }
+              {
+                "optionKey": "champion",
+                "optionName": "冠军/第一名",
+                "score": 13,
+                "needProof": true
+              },
+              {
+                "optionKey": "runner-up",
+                "optionName": "亚军/第二名",
+                "score": 12,
+                "needProof": true
+              },
+              {
+                "optionKey": "third-place",
+                "optionName": "季军/第三名",
+                "score": 11,
+                "needProof": true
+              },
+              {
+                "optionKey": "fourth-sixth",
+                "optionName": "第四至六名",
+                "score": 8,
+                "needProof": true
+              },
+              {
+                "optionKey": "seventh-eighth",
+                "optionName": "第七至八名",
+                "score": 7,
+                "needProof": true
+              },
+              {
+                "optionKey": "other",
+                "optionName": "其他名次",
+                "score": 5,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "college",
             "levelName": "院级",
             "options": [
-              { "optionKey": "champion", "optionName": "冠军/第一名", "score": 10.0, "needProof": true },
-              { "optionKey": "runner-up", "optionName": "亚军/第二名", "score": 9.0, "needProof": true },
-              { "optionKey": "third-place", "optionName": "季军/第三名", "score": 8.0, "needProof": true },
-              { "optionKey": "fourth-sixth", "optionName": "第四至六名", "score": 6.0, "needProof": true },
-              { "optionKey": "seventh-eighth", "optionName": "第七至八名", "score": 4.0, "needProof": true },
-              { "optionKey": "other", "optionName": "其他名次", "score": 3.0, "needProof": true }
+              {
+                "optionKey": "champion",
+                "optionName": "冠军/第一名",
+                "score": 10,
+                "needProof": true
+              },
+              {
+                "optionKey": "runner-up",
+                "optionName": "亚军/第二名",
+                "score": 9,
+                "needProof": true
+              },
+              {
+                "optionKey": "third-place",
+                "optionName": "季军/第三名",
+                "score": 8,
+                "needProof": true
+              },
+              {
+                "optionKey": "fourth-sixth",
+                "optionName": "第四至六名",
+                "score": 6,
+                "needProof": true
+              },
+              {
+                "optionKey": "seventh-eighth",
+                "optionName": "第七至八名",
+                "score": 4,
+                "needProof": true
+              },
+              {
+                "optionKey": "other",
+                "optionName": "其他名次",
+                "score": 3,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -979,7 +1614,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 5,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -995,7 +1635,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 1.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 1,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1011,7 +1656,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 2,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1026,7 +1676,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "qualified", "optionName": "考核合格及以上", "score": 2.0, "needProof": true }
+              {
+                "optionKey": "qualified",
+                "optionName": "考核合格及以上",
+                "score": 2,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1041,7 +1696,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": false }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 5,
+                "needProof": false
+              }
             ]
           }
         ]
@@ -1072,45 +1732,120 @@
             "levelKey": "count-5-plus",
             "levelName": "5次及以上",
             "options": [
-              { "optionKey": "hours-20-plus", "optionName": "20h及以上", "score": 10.0, "needProof": true },
-              { "optionKey": "hours-10-19", "optionName": "10h-19h", "score": 8.0, "needProof": true },
-              { "optionKey": "hours-under-10", "optionName": "不足10h", "score": 3.0, "needProof": true }
+              {
+                "optionKey": "hours-20-plus",
+                "optionName": "20h及以上",
+                "score": 10,
+                "needProof": true
+              },
+              {
+                "optionKey": "hours-10-19",
+                "optionName": "10h-19h",
+                "score": 8,
+                "needProof": true
+              },
+              {
+                "optionKey": "hours-under-10",
+                "optionName": "不足10h",
+                "score": 3,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "count-4",
             "levelName": "4次",
             "options": [
-              { "optionKey": "hours-20-plus", "optionName": "20h及以上", "score": 8.0, "needProof": true },
-              { "optionKey": "hours-10-19", "optionName": "10h-19h", "score": 6.0, "needProof": true },
-              { "optionKey": "hours-under-10", "optionName": "不足10h", "score": 2.0, "needProof": true }
+              {
+                "optionKey": "hours-20-plus",
+                "optionName": "20h及以上",
+                "score": 8,
+                "needProof": true
+              },
+              {
+                "optionKey": "hours-10-19",
+                "optionName": "10h-19h",
+                "score": 6,
+                "needProof": true
+              },
+              {
+                "optionKey": "hours-under-10",
+                "optionName": "不足10h",
+                "score": 2,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "count-3",
             "levelName": "3次",
             "options": [
-              { "optionKey": "hours-20-plus", "optionName": "20h及以上", "score": 6.0, "needProof": true },
-              { "optionKey": "hours-10-19", "optionName": "10h-19h", "score": 5.0, "needProof": true },
-              { "optionKey": "hours-under-10", "optionName": "不足10h", "score": 1.0, "needProof": true }
+              {
+                "optionKey": "hours-20-plus",
+                "optionName": "20h及以上",
+                "score": 6,
+                "needProof": true
+              },
+              {
+                "optionKey": "hours-10-19",
+                "optionName": "10h-19h",
+                "score": 5,
+                "needProof": true
+              },
+              {
+                "optionKey": "hours-under-10",
+                "optionName": "不足10h",
+                "score": 1,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "count-2",
             "levelName": "2次",
             "options": [
-              { "optionKey": "hours-20-plus", "optionName": "20h及以上", "score": 4.0, "needProof": true },
-              { "optionKey": "hours-10-19", "optionName": "10h-19h", "score": 3.0, "needProof": true },
-              { "optionKey": "hours-under-10", "optionName": "不足10h", "score": 0, "needProof": true }
+              {
+                "optionKey": "hours-20-plus",
+                "optionName": "20h及以上",
+                "score": 4,
+                "needProof": true
+              },
+              {
+                "optionKey": "hours-10-19",
+                "optionName": "10h-19h",
+                "score": 3,
+                "needProof": true
+              },
+              {
+                "optionKey": "hours-under-10",
+                "optionName": "不足10h",
+                "score": 0,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "count-1",
             "levelName": "1次",
             "options": [
-              { "optionKey": "hours-20-plus", "optionName": "20h及以上", "score": 2.0, "needProof": true },
-              { "optionKey": "hours-10-19", "optionName": "10h-19h", "score": 1.0, "needProof": true },
-              { "optionKey": "hours-under-10", "optionName": "不足10h", "score": 0, "needProof": true }
+              {
+                "optionKey": "hours-20-plus",
+                "optionName": "20h及以上",
+                "score": 2,
+                "needProof": true
+              },
+              {
+                "optionKey": "hours-10-19",
+                "optionName": "10h-19h",
+                "score": 1,
+                "needProof": true
+              },
+              {
+                "optionKey": "hours-under-10",
+                "optionName": "不足10h",
+                "score": 0,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1125,7 +1860,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 2,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1157,14 +1897,24 @@
             "levelKey": "school-above",
             "levelName": "校级及以上",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 4.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 4,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "college",
             "levelName": "院级（中队流动红旗）",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 1.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 1,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1179,7 +1929,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 6.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 6,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1195,7 +1950,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 1.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 1,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1210,14 +1970,24 @@
             "levelKey": "teacher-led",
             "levelName": "指导老师统一带队",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 3.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 3,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "self-led",
             "levelName": "“返家乡活动”等非指导老师带队活动",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 1.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 1,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1232,14 +2002,24 @@
             "levelKey": "school",
             "levelName": "学校",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": false }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 5,
+                "needProof": false
+              }
             ]
           },
           {
             "levelKey": "college",
             "levelName": "学院（无中队流动红旗）",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 3.0, "needProof": false }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 3,
+                "needProof": false
+              }
             ]
           }
         ]
@@ -1254,7 +2034,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": false }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 2,
+                "needProof": false
+              }
             ]
           }
         ]
@@ -1285,10 +2070,30 @@
             "levelKey": "rating-level",
             "levelName": "评定等级",
             "options": [
-              { "optionKey": "excellent", "optionName": "优秀", "score": 10.0, "needProof": true },
-              { "optionKey": "good", "optionName": "良好", "score": 9.0, "needProof": true },
-              { "optionKey": "qualified", "optionName": "合格", "score": 6.0, "needProof": true },
-              { "optionKey": "unqualified", "optionName": "不合格", "score": 0, "needProof": true }
+              {
+                "optionKey": "excellent",
+                "optionName": "优秀",
+                "score": 10,
+                "needProof": true
+              },
+              {
+                "optionKey": "good",
+                "optionName": "良好",
+                "score": 9,
+                "needProof": true
+              },
+              {
+                "optionKey": "qualified",
+                "optionName": "合格",
+                "score": 6,
+                "needProof": true
+              },
+              {
+                "optionKey": "unqualified",
+                "optionName": "不合格",
+                "score": 0,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1303,10 +2108,30 @@
             "levelKey": "rating-level",
             "levelName": "评定等级",
             "options": [
-              { "optionKey": "excellent", "optionName": "优秀", "score": 10.0, "needProof": true },
-              { "optionKey": "good", "optionName": "良好", "score": 8.0, "needProof": true },
-              { "optionKey": "qualified", "optionName": "合格", "score": 5.0, "needProof": true },
-              { "optionKey": "unqualified", "optionName": "不合格", "score": 0, "needProof": true }
+              {
+                "optionKey": "excellent",
+                "optionName": "优秀",
+                "score": 10,
+                "needProof": true
+              },
+              {
+                "optionKey": "good",
+                "optionName": "良好",
+                "score": 8,
+                "needProof": true
+              },
+              {
+                "optionKey": "qualified",
+                "optionName": "合格",
+                "score": 5,
+                "needProof": true
+              },
+              {
+                "optionKey": "unqualified",
+                "optionName": "不合格",
+                "score": 0,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1321,10 +2146,30 @@
             "levelKey": "rating-level",
             "levelName": "评定等级",
             "options": [
-              { "optionKey": "excellent", "optionName": "优秀", "score": 10.0, "needProof": true },
-              { "optionKey": "good", "optionName": "良好", "score": 7.0, "needProof": true },
-              { "optionKey": "qualified", "optionName": "合格", "score": 5.0, "needProof": true },
-              { "optionKey": "unqualified", "optionName": "不合格", "score": 0, "needProof": true }
+              {
+                "optionKey": "excellent",
+                "optionName": "优秀",
+                "score": 10,
+                "needProof": true
+              },
+              {
+                "optionKey": "good",
+                "optionName": "良好",
+                "score": 7,
+                "needProof": true
+              },
+              {
+                "optionKey": "qualified",
+                "optionName": "合格",
+                "score": 5,
+                "needProof": true
+              },
+              {
+                "optionKey": "unqualified",
+                "optionName": "不合格",
+                "score": 0,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1339,10 +2184,30 @@
             "levelKey": "rating-level",
             "levelName": "评定等级",
             "options": [
-              { "optionKey": "excellent", "optionName": "优秀", "score": 9.0, "needProof": true },
-              { "optionKey": "good", "optionName": "良好", "score": 6.0, "needProof": true },
-              { "optionKey": "qualified", "optionName": "合格", "score": 4.0, "needProof": true },
-              { "optionKey": "unqualified", "optionName": "不合格", "score": 0, "needProof": true }
+              {
+                "optionKey": "excellent",
+                "optionName": "优秀",
+                "score": 9,
+                "needProof": true
+              },
+              {
+                "optionKey": "good",
+                "optionName": "良好",
+                "score": 6,
+                "needProof": true
+              },
+              {
+                "optionKey": "qualified",
+                "optionName": "合格",
+                "score": 4,
+                "needProof": true
+              },
+              {
+                "optionKey": "unqualified",
+                "optionName": "不合格",
+                "score": 0,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1357,10 +2222,30 @@
             "levelKey": "rating-level",
             "levelName": "评定等级",
             "options": [
-              { "optionKey": "excellent", "optionName": "优秀", "score": 8.0, "needProof": true },
-              { "optionKey": "good", "optionName": "良好", "score": 5.0, "needProof": true },
-              { "optionKey": "qualified", "optionName": "合格", "score": 3.0, "needProof": true },
-              { "optionKey": "unqualified", "optionName": "不合格", "score": 0, "needProof": true }
+              {
+                "optionKey": "excellent",
+                "optionName": "优秀",
+                "score": 8,
+                "needProof": true
+              },
+              {
+                "optionKey": "good",
+                "optionName": "良好",
+                "score": 5,
+                "needProof": true
+              },
+              {
+                "optionKey": "qualified",
+                "optionName": "合格",
+                "score": 3,
+                "needProof": true
+              },
+              {
+                "optionKey": "unqualified",
+                "optionName": "不合格",
+                "score": 0,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1375,10 +2260,30 @@
             "levelKey": "rating-level",
             "levelName": "评定等级",
             "options": [
-              { "optionKey": "excellent", "optionName": "优秀", "score": 6.0, "needProof": true },
-              { "optionKey": "good", "optionName": "良好", "score": 4.0, "needProof": true },
-              { "optionKey": "qualified", "optionName": "合格", "score": 2.0, "needProof": true },
-              { "optionKey": "unqualified", "optionName": "不合格", "score": 0, "needProof": true }
+              {
+                "optionKey": "excellent",
+                "optionName": "优秀",
+                "score": 6,
+                "needProof": true
+              },
+              {
+                "optionKey": "good",
+                "optionName": "良好",
+                "score": 4,
+                "needProof": true
+              },
+              {
+                "optionKey": "qualified",
+                "optionName": "合格",
+                "score": 2,
+                "needProof": true
+              },
+              {
+                "optionKey": "unqualified",
+                "optionName": "不合格",
+                "score": 0,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1393,10 +2298,30 @@
             "levelKey": "rating-level",
             "levelName": "评定等级",
             "options": [
-              { "optionKey": "excellent", "optionName": "优秀", "score": 5.0, "needProof": true },
-              { "optionKey": "good", "optionName": "良好", "score": 3.0, "needProof": true },
-              { "optionKey": "qualified", "optionName": "合格", "score": 1.0, "needProof": true },
-              { "optionKey": "unqualified", "optionName": "不合格", "score": 0, "needProof": true }
+              {
+                "optionKey": "excellent",
+                "optionName": "优秀",
+                "score": 5,
+                "needProof": true
+              },
+              {
+                "optionKey": "good",
+                "optionName": "良好",
+                "score": 3,
+                "needProof": true
+              },
+              {
+                "optionKey": "qualified",
+                "optionName": "合格",
+                "score": 1,
+                "needProof": true
+              },
+              {
+                "optionKey": "unqualified",
+                "optionName": "不合格",
+                "score": 0,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1411,8 +2336,18 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "leader", "optionName": "负责人", "score": 7.0, "needProof": true },
-              { "optionKey": "member", "optionName": "成员", "score": 2.0, "needProof": true }
+              {
+                "optionKey": "leader",
+                "optionName": "负责人",
+                "score": 7,
+                "needProof": true
+              },
+              {
+                "optionKey": "member",
+                "optionName": "成员",
+                "score": 2,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1427,7 +2362,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 0, "needProof": false }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 0,
+                "needProof": false
+              }
             ]
           }
         ]
@@ -1459,10 +2399,30 @@
             "levelKey": "award-level",
             "levelName": "奖项等级",
             "options": [
-              { "optionKey": "first", "optionName": "一等奖", "score": 8.0, "needProof": true },
-              { "optionKey": "second", "optionName": "二等奖", "score": 7.0, "needProof": true },
-              { "optionKey": "third", "optionName": "三等奖", "score": 6.0, "needProof": true },
-              { "optionKey": "participate", "optionName": "参与活动", "score": 4.0, "needProof": true }
+              {
+                "optionKey": "first",
+                "optionName": "一等奖",
+                "score": 8,
+                "needProof": true
+              },
+              {
+                "optionKey": "second",
+                "optionName": "二等奖",
+                "score": 7,
+                "needProof": true
+              },
+              {
+                "optionKey": "third",
+                "optionName": "三等奖",
+                "score": 6,
+                "needProof": true
+              },
+              {
+                "optionKey": "participate",
+                "optionName": "参与活动",
+                "score": 4,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1477,10 +2437,30 @@
             "levelKey": "award-level",
             "levelName": "奖项等级",
             "options": [
-              { "optionKey": "first", "optionName": "一等奖", "score": 5.0, "needProof": true },
-              { "optionKey": "second", "optionName": "二等奖", "score": 4.0, "needProof": true },
-              { "optionKey": "third", "optionName": "三等奖", "score": 3.0, "needProof": true },
-              { "optionKey": "participate", "optionName": "参与活动", "score": 2.0, "needProof": true }
+              {
+                "optionKey": "first",
+                "optionName": "一等奖",
+                "score": 5,
+                "needProof": true
+              },
+              {
+                "optionKey": "second",
+                "optionName": "二等奖",
+                "score": 4,
+                "needProof": true
+              },
+              {
+                "optionKey": "third",
+                "optionName": "三等奖",
+                "score": 3,
+                "needProof": true
+              },
+              {
+                "optionKey": "participate",
+                "optionName": "参与活动",
+                "score": 2,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1496,7 +2476,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 5.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 5,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1512,7 +2497,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 1.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 1,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1527,14 +2517,24 @@
             "levelKey": "cet-6",
             "levelName": "六级",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 3.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 3,
+                "needProof": true
+              }
             ]
           },
           {
             "levelKey": "cet-4",
             "levelName": "四级",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 1.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 1,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1549,7 +2549,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": true }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 2,
+                "needProof": true
+              }
             ]
           }
         ]
@@ -1564,7 +2569,12 @@
             "levelKey": "default",
             "levelName": "标准",
             "options": [
-              { "optionKey": "default", "optionName": "标准", "score": 2.0, "needProof": false }
+              {
+                "optionKey": "default",
+                "optionName": "标准",
+                "score": 2,
+                "needProof": false
+              }
             ]
           }
         ]
