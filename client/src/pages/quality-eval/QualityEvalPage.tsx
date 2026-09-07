@@ -567,13 +567,13 @@ items: cat.items.map((item: EvalItem) => ({
             <table className="w-full table-fixed border-collapse text-center text-xs">
               <thead className="sticky top-0 z-10">
                 <tr className="bg-slate-700 text-white">
-                  <th className="border border-slate-600 px-1 py-2 font-semibold" style={{ width: '90px' }}>
+                  <th className="border border-slate-600 px-1 py-2 font-semibold" style={{ width: '100px' }}>
                     学号
                   </th>
-                  <th className="border border-slate-600 px-1 py-2 font-semibold" style={{ width: '130px' }}>
+                  <th className="border border-slate-600 px-1 py-2 font-semibold" style={{ width: '80px' }}>
                     班级
                   </th>
-                  <th className="border border-slate-600 px-1 py-2 font-semibold" style={{ width: '70px' }}>
+                  <th className="border border-slate-600 px-1 py-2 font-semibold" style={{ width: '80px' }}>
                     姓名
                   </th>
                   <th className="border border-slate-600 px-2 py-2 font-semibold" style={{ width: '85px' }}>
