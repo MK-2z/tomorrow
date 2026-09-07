@@ -419,7 +419,7 @@ items: cat.items.map((item: EvalItem) => ({
 
   return (
     <div className="min-h-screen bg-muted/30 p-4 md:p-8">
-      <Card className="mx-auto max-w-[1400px]">
+      <Card className="mx-auto max-w-[1600px]">
          <CardHeader>
              <CardTitle className="text-center text-2xl font-bold">
                {isView ? '学生素质评价详情' : isEdit ? '编辑学生素质评价表' : '学生素质评价表'}
@@ -561,36 +561,36 @@ items: cat.items.map((item: EvalItem) => ({
           </div>
 
           <div className="overflow-x-auto rounded-lg border border-slate-300 shadow-sm">
-            <table className="w-full min-w-[1200px] border-collapse text-center text-sm">
+            <table className="w-full table-fixed border-collapse text-center text-xs">
               <thead className="sticky top-0 z-10">
                 <tr className="bg-slate-700 text-white">
-                  <th className="border border-slate-600 px-3 py-3 font-semibold" style={{ width: '100px' }}>
+                  <th className="border border-slate-600 px-2 py-2 font-semibold" style={{ width: '70px' }}>
                     学号
                   </th>
-                  <th className="border border-slate-600 px-3 py-3 font-semibold" style={{ width: '100px' }}>
+                  <th className="border border-slate-600 px-2 py-2 font-semibold" style={{ width: '70px' }}>
                     班级
                   </th>
-                  <th className="border border-slate-600 px-3 py-3 font-semibold" style={{ width: '80px' }}>
+                  <th className="border border-slate-600 px-2 py-2 font-semibold" style={{ width: '55px' }}>
                     姓名
                   </th>
-                  <th className="border border-slate-600 px-3 py-3 font-semibold" style={{ width: '120px' }}>
+                  <th className="border border-slate-600 px-2 py-2 font-semibold" style={{ width: '85px' }}>
                     一级指标
                   </th>
-                  <th className="border border-slate-600 px-3 py-3 font-semibold" style={{ width: '130px' }}>
+                  <th className="border border-slate-600 px-2 py-2 font-semibold" style={{ width: '95px' }}>
                     二级指标
                   </th>
-                  <th className="border border-slate-600 px-3 py-3 font-semibold" style={{ width: '45%' }}>
+                  <th className="border border-slate-600 px-2 py-2 font-semibold">
                     原因分值与证明文件
                   </th>
-                  <th className="border border-slate-600 px-3 py-3 font-semibold" style={{ width: '80px' }}>
+                  <th className="border border-slate-600 px-2 py-2 font-semibold" style={{ width: '55px' }}>
                     各项分值
                   </th>
-                  <th className="border border-slate-600 px-3 py-3 font-semibold bg-slate-600" style={{ width: '90px' }}>
+                  <th className="border border-slate-600 px-2 py-2 font-semibold bg-slate-600" style={{ width: '65px' }}>
                     类别总分
                   </th>
                   <th
-                    className="sticky right-0 border border-slate-600 bg-slate-800 px-3 py-3 font-bold text-white shadow-[-2px_0_4px_rgba(0_0_0_0.15)]"
-                    style={{ width: '100px' }}
+                    className="sticky right-0 border border-slate-600 bg-slate-800 px-2 py-2 font-bold text-white shadow-[-2px_0_4px_rgba(0_0_0_0.15)]"
+                    style={{ width: '65px' }}
                   >
                     总分
                   </th>
@@ -629,19 +629,19 @@ items: cat.items.map((item: EvalItem) => ({
                           <>
                             <td
                               rowSpan={totalRows}
-                              className="border border-slate-200 bg-slate-50 px-3 py-3 align-middle font-medium text-slate-700"
+                              className="border border-slate-200 bg-slate-50 px-2 py-2 align-middle font-medium text-slate-700"
                             >
                               {studentId || '-'}
                             </td>
                             <td
                               rowSpan={totalRows}
-                              className="border border-slate-200 bg-slate-50 px-3 py-3 align-middle font-medium text-slate-700"
+                              className="border border-slate-200 bg-slate-50 px-2 py-2 align-middle font-medium text-slate-700"
                             >
                               {className || '-'}
                             </td>
                             <td
                               rowSpan={totalRows}
-                              className="border border-slate-200 bg-slate-50 px-3 py-3 align-middle font-medium text-slate-700"
+                              className="border border-slate-200 bg-slate-50 px-2 py-2 align-middle font-medium text-slate-700"
                             >
                               {studentName || '-'}
                             </td>
@@ -650,13 +650,13 @@ items: cat.items.map((item: EvalItem) => ({
                         {isFirstItemOfCat && (
                           <td
                             rowSpan={cat.items.length}
-                            className="border border-slate-200 bg-slate-100 px-3 py-3 align-middle font-bold text-slate-800"
+                            className="border border-slate-200 bg-slate-100 px-2 py-2 align-middle font-bold text-slate-800"
                           >
                             {cat.categoryName}
                           </td>
                         )}
                           <td
-                            className={`border border-slate-200 px-3 py-3 align-middle font-medium ${
+                            className={`border border-slate-200 px-2 py-2 align-middle font-medium ${
                               isNegativeItem
                                 ? 'text-rose-600'
                                 : isItemNeedsRevision(item.itemKey)
@@ -674,7 +674,7 @@ items: cat.items.map((item: EvalItem) => ({
                               )}
                             </div>
                           </td>
-                         <td className="border border-slate-200 px-3 py-3 align-top text-left">
+                         <td className="border border-slate-200 px-2 py-2 align-top text-left">
                              <EvalReasonsCell
                                itemKey={item.itemKey}
                                itemMaxScore={item.itemMaxScore}
@@ -693,7 +693,7 @@ items: cat.items.map((item: EvalItem) => ({
                               />
                          </td>
                           <td
-                            className={`border border-slate-200 px-3 py-3 align-middle font-bold ${
+                            className={`border border-slate-200 px-2 py-2 align-middle font-bold ${
                               itemScore < item.itemMaxScore
                                 ? 'text-slate-700'
                                 : isOverLimit
@@ -716,7 +716,7 @@ items: cat.items.map((item: EvalItem) => ({
                         {isFirstItemOfCat && (
                            <td
                              rowSpan={cat.items.length}
-                             className={`border border-slate-200 bg-slate-100 px-3 py-3 align-middle font-bold ${
+                             className={`border border-slate-200 bg-slate-100 px-2 py-2 align-middle font-bold ${
                                catOverLimit ? 'text-amber-700' : 'text-slate-800'
                              }`}
                            >
@@ -731,7 +731,7 @@ items: cat.items.map((item: EvalItem) => ({
                         {isFirstRow && (
                           <td
                             rowSpan={totalRows}
-                            className="sticky right-0 border border-slate-300 bg-slate-800 px-3 py-3 align-middle text-xl font-bold text-white shadow-[-2px_0_4px_rgba(0_0_0_0.15)]"
+                            className="sticky right-0 border border-slate-300 bg-slate-800 px-2 py-2 align-middle text-lg font-bold text-white shadow-[-2px_0_4px_rgba(0_0_0_0.15)]"
                           >
                             {totalScore}
                           </td>
