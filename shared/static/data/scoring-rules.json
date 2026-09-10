@@ -320,26 +320,6 @@
         ]
       },
       {
-        "projectKey": "ideological-basic",
-        "projectName": "思想端正，政治立场坚定等",
-        "remark": "无思想政治相关问题，给与基础分3分。",
-        "type": "positive",
-        "levelGroups": [
-          {
-            "levelKey": "default",
-            "levelName": "标准",
-            "options": [
-              {
-                "optionKey": "default",
-                "optionName": "标准",
-                "score": 3,
-                "needProof": true
-              }
-            ]
-          }
-        ]
-      },
-      {
         "projectKey": "squadron-contribution",
         "projectName": "对中队做出大贡献的",
         "remark": "需有导员认定。",
