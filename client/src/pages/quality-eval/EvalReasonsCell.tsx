@@ -1,6 +1,7 @@
 ﻿import React, { useRef, useState, useMemo } from 'react';
 import { logger } from '@/utils/logger';
 import { axiosForBackend } from '@/utils/axios';
+import { openProofFile } from '@/utils/file-url';
 import { toast } from 'sonner';
 import {
   Plus,
@@ -412,15 +413,19 @@ const EvalReasonsCell: React.FC<EvalReasonsCellProps> = ({
                               key={f.id}
                               className="flex items-center justify-between gap-2 rounded bg-muted/50 px-2 py-1 text-xs"
                             >
-                              <a
-                                href={f.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex min-w-0 flex-1 items-center gap-1 truncate hover:underline"
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  openProofFile(f.url, f.name).catch(() => {
+                                    toast.error('文件打开失败，可能已被清理');
+                                  });
+                                }}
+                                title={f.name}
+                                className="flex min-w-0 flex-1 items-center gap-1 truncate text-left hover:underline"
                               >
                                 <FileText className="h-3 w-3 shrink-0 text-muted-foreground" />
                                 <span className="truncate">{f.name}</span>
-                              </a>
+                              </button>
                               {!readOnly && (
                                 <button
                                   onClick={() => removeFile(reason.id, f.id)}

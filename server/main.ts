@@ -28,7 +28,7 @@ async function bootstrap() {
     maxAge: '7d',
     fallthrough: true,
     setHeaders: (res, filePath) => {
-      // 确保浏览器正确识别文件类型
+      // 确保浏览器正确识别文件类型，避免二进制文件被当作文本渲染而乱码
       const ext = extname(filePath).toLowerCase();
       const mimeTypes: Record<string, string> = {
         '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png',
@@ -49,13 +49,27 @@ async function bootstrap() {
       if (mimeTypes[ext]) {
         res.setHeader('Content-Type', mimeTypes[ext]);
       }
-      // 图片和PDF在浏览器中预览，其他文件下载
-      if (!['.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp', '.svg', '.pdf'].includes(ext)) {
+      // 图片和PDF在浏览器中内联预览，其他文件强制下载（避免浏览器把二进制当文本打开而乱码）
+      const inlineExts = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp', '.svg', '.pdf'];
+      if (!inlineExts.includes(ext)) {
         const fileName = basename(filePath);
-        res.setHeader('Content-Disposition', `attachment; filename="${encodeURIComponent(fileName)}"`);
+        // RFC 5987 标准编码，兼容中文及各类浏览器的下载文件名
+        const asciiFallback = fileName.replace(/[^\x20-\x7E]/g, '_');
+        res.setHeader(
+          'Content-Disposition',
+          `attachment; filename="${asciiFallback}"; filename*=UTF-8''${encodeURIComponent(fileName)}`,
+        );
+      } else {
+        res.setHeader('Content-Disposition', 'inline');
       }
+      // 防止浏览器对响应做错误的 MIME 嗅探
+      res.setHeader('X-Content-Type-Options', 'nosniff');
     },
   }));
+  // /uploads 下找不到文件时显式返回 404，避免 fallthrough 到 SPA 返回 index.html（会被当成乱码文件）
+  app.use('/uploads', (_req, res) => {
+    res.status(404).json({ success: false, message: '文件不存在或已被清理' });
+  });
   logger.log('Uploads static files configured: ' + uploadsDir);
 
   // 提供前端静态资源

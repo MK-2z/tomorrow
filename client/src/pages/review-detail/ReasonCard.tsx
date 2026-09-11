@@ -29,11 +29,14 @@ import {
 } from '@/components/ui/dialog';
 
 import type { EvalReason, ProofFile, ReasonReviewStatus } from '@shared/api.interface';
-
-const IMAGE_EXT_REGEX = /\.(png|jpe?g|gif|webp|bmp|svg)$/i;
+import {
+  encodeFileUrl,
+  isImageFileByName,
+  openProofFile,
+} from '@/utils/file-url';
 
 function isImageFile(file: ProofFile): boolean {
-  return IMAGE_EXT_REGEX.test(file.name || file.url);
+  return isImageFileByName(file.name || file.url);
 }
 
 export interface ReasonCardProps {
@@ -265,14 +268,14 @@ export const ReasonCard: React.FC<ReasonCardProps> = ({
                 isImageFile(file) ? (
                   <a
                     key={file.id}
-                    href={file.url}
+                    href={encodeFileUrl(file.url)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative"
                     onClick={(e: React.MouseEvent) => e.stopPropagation()}
                   >
                     <Image
-                      src={file.url}
+                      src={encodeFileUrl(file.url)}
                       alt={file.name}
                       width={56}
                       height={56}
@@ -283,17 +286,21 @@ export const ReasonCard: React.FC<ReasonCardProps> = ({
                     </div>
                   </a>
                 ) : (
-                  <a
+                  <button
                     key={file.id}
-                    href={file.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    type="button"
                     className="flex items-center gap-2 rounded-md border border-border bg-background px-3 py-2 text-xs hover:bg-accent transition-colors"
-                    onClick={(e: React.MouseEvent) => e.stopPropagation()}
+                    onClick={(e: React.MouseEvent) => {
+                      e.stopPropagation();
+                      openProofFile(file.url, file.name).catch(() => {
+                        toast.error('文件打开失败，可能已被清理');
+                      });
+                    }}
+                    title={file.name}
                   >
                     <FileText className="h-4 w-4 text-muted-foreground" />
                     <span className="max-w-[120px] truncate">{file.name}</span>
-                  </a>
+                  </button>
                 ),
               )}
             </div>

@@ -1,6 +1,7 @@
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 import { logger } from './logger';
+import { encodeFileUrl } from './file-url';
 import type { QualityEvalRecord, EvalCategory, EvalItem, EvalReason, ProofFile } from '@shared/api.interface';
 
 /**
@@ -93,8 +94,10 @@ export async function exportProofFilesToZip(
  * 下载文件为Blob
  */
 async function downloadFile(url: string): Promise<Blob> {
-  // 如果是相对路径，拼接当前域名
-  const fullUrl = url.startsWith('http') ? url : `${window.location.origin}${url}`;
+  // 如果是相对路径，拼接当前域名；并对路径中的中文/特殊字符安全编码
+  const fullUrl = url.startsWith('http')
+    ? encodeFileUrl(url)
+    : `${window.location.origin}${encodeFileUrl(url)}`;
   const response = await fetch(fullUrl);
   if (!response.ok) {
     throw new Error(`下载失败: ${response.status} ${response.statusText}`);

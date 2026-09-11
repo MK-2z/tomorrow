@@ -29,17 +29,13 @@ export class UploadController {
         destination: UPLOAD_DIR,
         filename: (_req, file, cb) => {
           const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
-          // 修复 multer 中文文件名编码问题：从 Latin1 转换为 UTF-8
+          // 修复 multer 中文文件名编码问题：从 Latin1 转换为 UTF-8（仅用于得到原始扩展名）
           const originalname = Buffer.from(file.originalname, 'latin1').toString('utf8');
-          const ext = extname(originalname);
-          // 保留原始文件名（去除扩展名），添加时间戳避免重名
-          const originalBase = originalname.replace(ext, '');
-          // 处理文件名中的非法字符
-          const safeBase = originalBase
-            .replace(/[<>:"/\\|?*\x00-\x1F]/g, '_') // 移除非法字符
-            .replace(/\s+/g, '_') // 空格替换为下划线
-            .slice(0, 100); // 限制长度
-          cb(null, `${safeBase}_${uniqueSuffix}${ext}`);
+          const ext = extname(originalname).toLowerCase();
+          // 磁盘文件名统一使用纯 ASCII（时间戳+随机数+原始扩展名），彻底规避
+          // 中文文件名在 URL 编解码 / 静态文件服务 / 不同操作系统下的乱码与找不到问题。
+          // 原始中文名仅通过返回值 name 字段保存到数据库，不参与磁盘存储与 URL。
+          cb(null, `${uniqueSuffix}${ext}`);
         },
       }),
       limits: {
