@@ -303,7 +303,7 @@ export class QualityEvalService {
       }
     }
 
-    const [rows, countResult, statsRows] = await Promise.all([
+    const [rows, countResult, statsRows, globalCountResult] = await Promise.all([
       this.db
         .select()
         .from(qualityEvalRecords)
@@ -315,21 +315,22 @@ export class QualityEvalService {
         .select({ count: count() })
         .from(qualityEvalRecords)
         .where(whereClause),
+      // 顶部状态卡片始终按「全局」统计，不受当前状态标签 / 列筛选影响，保证审查、打回、删除后数字实时准确
       this.db
         .select({
           statusKey: statusExpr.as('status_key'),
           statusCount: sql`count(*)::bigint`.as('status_count'),
         })
         .from(qualityEvalRecords)
-        .where(whereClause)
         .groupBy(statusExpr),
+      this.db.select({ count: count() }).from(qualityEvalRecords),
     ]);
 
     const total = Number(countResult[0]?.count ?? 0);
     const items = rows.map((row: QualityEvalSelect) => this.mapToDto(row));
 
     const stats: QualityEvalListStats = {
-      all: total,
+      all: Number(globalCountResult[0]?.count ?? 0),
       pending: 0,
       approved: 0,
       returned: 0,
@@ -798,45 +799,44 @@ export class QualityEvalService {
       operatorRole?: string;
     },
   ): Promise<number> {
+    if (!ids || ids.length === 0) return 0;
+
+    // 一次查出命中记录（用于计数与操作日志）
     const rows = await this.db
       .select({
         id: qualityEvalRecords.id,
-        evalData: qualityEvalRecords.evalData,
         studentId: qualityEvalRecords.studentId,
         studentName: qualityEvalRecords.studentName,
       })
       .from(qualityEvalRecords)
       .where(inArray(qualityEvalRecords.id, ids));
 
-    const now = new Date();
-    const nowIso = now.toISOString();
-    let returnedCount = 0;
+    if (rows.length === 0) return 0;
 
-    for (const row of rows) {
-      const currentEval = (row.evalData ?? {}) as EvalDataJson;
-      // 整体置为「打回 / 待修改」状态，并重置学生本轮重新提交机会
-      const nextEval: EvalDataJson = {
-        ...currentEval,
-        review: {
-          status: 'needs_revision',
-          comment,
-          reviewedAt: nowIso,
-          reviewedBy: options?.operatorStudentId,
-        },
-      };
+    const reviewPayload = JSON.stringify({
+      status: 'needs_revision',
+      comment,
+      reviewedAt: new Date().toISOString(),
+      reviewedBy: options?.operatorStudentId ?? null,
+    });
 
-      await this.db
-        .update(qualityEvalRecords)
-        .set({
-          evalData: nextEval,
-          resubmitted: false,
-          updatedAt: now,
-        } as Partial<QualityEvalInsert>)
-        .where(eq(qualityEvalRecords.id, row.id));
+    // 单条 SQL 批量打回：用 jsonb_set 只覆盖 review、保留每条原有数据，并重置学生本轮重交机会；
+    // 避免逐条 select+update 串行在大批量（一键全选）时超过前端请求超时
+    await this.db.execute(sql`
+      UPDATE ${qualityEvalRecords}
+      SET ${qualityEvalRecords.evalData} = jsonb_set(
+            COALESCE(${qualityEvalRecords.evalData}, '{}'::jsonb),
+            '{review}',
+            ${reviewPayload}::jsonb,
+            true
+          ),
+          ${qualityEvalRecords.resubmitted} = false,
+          ${qualityEvalRecords.updatedAt} = now()
+      WHERE ${qualityEvalRecords.id} = ANY(${ids}::uuid[])
+    `);
 
-      returnedCount += 1;
-
-      if (options?.operatorStudentId && options.operatorRole) {
+    if (options?.operatorStudentId && options?.operatorRole) {
+      for (const row of rows) {
         this.safeLogOperation(
           options.operatorStudentId,
           options.operatorName || '',
@@ -849,8 +849,8 @@ export class QualityEvalService {
       }
     }
 
-    this.logger.log(`批量打回素质评价记录: ${returnedCount} 条`);
-    return returnedCount;
+    this.logger.log(`批量打回素质评价记录: ${rows.length} 条`);
+    return rows.length;
   }
 
   async review(
