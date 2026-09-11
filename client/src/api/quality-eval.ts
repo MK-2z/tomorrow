@@ -144,6 +144,26 @@ export async function batchDeleteQualityEval(ids: string[]): Promise<number> {
   }
 }
 
+export async function batchReturnQualityEval(
+  ids: string[],
+  comment: string,
+): Promise<number> {
+  try {
+    const res = await axiosForBackend.post<ApiResponse<{ returnedCount: number }>>(
+      '/api/quality-eval/batch-return',
+      { ids, comment },
+      { headers: getAuthHeaders() },
+    );
+    if (!res.data?.success) {
+      throw new Error(res.data?.message || '批量打回失败');
+    }
+    return res.data.data.returnedCount;
+  } catch (error) {
+    logger.error('批量打回素质评价记录失败', error);
+    throw error;
+  }
+}
+
 export async function exportQualityEval(params: {
   studentId?: string;
   studentName?: string;

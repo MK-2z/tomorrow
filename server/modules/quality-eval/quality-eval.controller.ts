@@ -346,6 +346,29 @@ export class QualityEvalController {
     return { success: true, data: { deletedCount }, message: 'ok' };
   }
 
+  @Post('batch-return')
+  async batchReturn(
+    @Body() body: { ids: string[]; comment?: string },
+    @Headers('x-student-id') operatorStudentId?: string,
+    @Headers('x-user-name') operatorName?: string,
+    @Headers('x-user-role') operatorRole?: string,
+  ): Promise<ApiResponse<{ returnedCount: number }>> {
+    if (!isAdminOrAbove(operatorRole ?? '')) {
+      throw new ForbiddenException('无权限打回评价记录');
+    }
+    if (!body.ids || body.ids.length === 0) {
+      throw new BadRequestException('请选择要打回的记录');
+    }
+
+    const comment = (body.comment ?? '').trim() || '请按审查意见修改后重新提交';
+    const returnedCount = await this.qualityEvalService.batchReturn(body.ids, comment, {
+      operatorStudentId,
+      operatorName,
+      operatorRole,
+    });
+    return { success: true, data: { returnedCount }, message: 'ok' };
+  }
+
   @Post(':id/review')
   async review(
     @Param('id') id: string,

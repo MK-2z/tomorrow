@@ -749,6 +749,70 @@ export class QualityEvalService {
     return deleted.length;
   }
 
+  async batchReturn(
+    ids: string[],
+    comment: string,
+    options?: {
+      operatorStudentId?: string;
+      operatorName?: string;
+      operatorRole?: string;
+    },
+  ): Promise<number> {
+    const rows = await this.db
+      .select({
+        id: qualityEvalRecords.id,
+        evalData: qualityEvalRecords.evalData,
+        studentId: qualityEvalRecords.studentId,
+        studentName: qualityEvalRecords.studentName,
+      })
+      .from(qualityEvalRecords)
+      .where(inArray(qualityEvalRecords.id, ids));
+
+    const now = new Date();
+    const nowIso = now.toISOString();
+    let returnedCount = 0;
+
+    for (const row of rows) {
+      const currentEval = (row.evalData ?? {}) as EvalDataJson;
+      // 整体置为「打回 / 待修改」状态，并重置学生本轮重新提交机会
+      const nextEval: EvalDataJson = {
+        ...currentEval,
+        review: {
+          status: 'needs_revision',
+          comment,
+          reviewedAt: nowIso,
+          reviewedBy: options?.operatorStudentId,
+        },
+      };
+
+      await this.db
+        .update(qualityEvalRecords)
+        .set({
+          evalData: nextEval,
+          resubmitted: false,
+          updatedAt: now,
+        } as Partial<QualityEvalInsert>)
+        .where(eq(qualityEvalRecords.id, row.id));
+
+      returnedCount += 1;
+
+      if (options?.operatorStudentId && options.operatorRole) {
+        this.safeLogOperation(
+          options.operatorStudentId,
+          options.operatorName || '',
+          options.operatorRole,
+          'review_needs_revision',
+          row.studentId,
+          row.studentName ?? undefined,
+          `批量打回：${comment || '无备注'}`,
+        );
+      }
+    }
+
+    this.logger.log(`批量打回素质评价记录: ${returnedCount} 条`);
+    return returnedCount;
+  }
+
   async review(
     id: string,
     dto: ReviewQualityEvalDto,

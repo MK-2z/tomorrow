@@ -46,6 +46,15 @@ import {
 } from '@client/src/components/ui/pagination';
 import { Skeleton } from '@client/src/components/ui/skeleton';
 import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@client/src/components/ui/dialog';
+import { Textarea } from '@client/src/components/ui/textarea';
+import {
   Empty,
   EmptyContent,
   EmptyDescription,
@@ -122,6 +131,9 @@ const ReviewListPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [exporting, setExporting] = useState(false);
   const [deleting, setDeleting] = useState(false);
+  const [returning, setReturning] = useState(false);
+  const [returnDialogOpen, setReturnDialogOpen] = useState(false);
+  const [returnComment, setReturnComment] = useState('');
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [stats, setStats] = useState({ all: 0, pending: 0, approved: 0, returned: 0 });
 
@@ -374,6 +386,44 @@ const ReviewListPage: React.FC = () => {
     }
   };
 
+  const openReturnDialog = () => {
+    if (selectedIds.size === 0) {
+      toast.info('请先勾选要打回的记录');
+      return;
+    }
+    setReturnComment('');
+    setReturnDialogOpen(true);
+  };
+
+  const handleBatchReturn = async () => {
+    const comment = returnComment.trim();
+    if (!comment) {
+      toast.info('请填写打回意见，学生将据此修改');
+      return;
+    }
+    if (returning) return;
+    setReturning(true);
+    try {
+      const count = await qualityEvalApi.batchReturnQualityEval(
+        Array.from(selectedIds),
+        comment,
+      );
+      toast.success(`已打回 ${count} 条记录，学生可修改后重新提交`);
+      setReturnDialogOpen(false);
+      setReturnComment('');
+      setSelectedIds(new Set());
+      fetchList();
+    } catch (error: unknown) {
+      logger.error('批量打回评价记录失败', error);
+      const msg = error && typeof error === 'object' && 'message' in error
+        ? String((error as { message: unknown }).message)
+        : '批量打回失败';
+      toast.error(msg);
+    } finally {
+      setReturning(false);
+    }
+  };
+
   const toggleSelectAll = () => {
     if (selectedIds.size === items.length && items.length > 0) {
       setSelectedIds(new Set());
@@ -437,6 +487,16 @@ const ReviewListPage: React.FC = () => {
               >
                 <FileSpreadsheet className="mr-1 h-4 w-4" />
                 导出评价记录
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                className="text-amber-600 hover:text-amber-700 border-amber-300 hover:bg-amber-50"
+                onClick={openReturnDialog}
+                disabled={returning || selectedIds.size === 0}
+              >
+                <MessageSquareWarning className="mr-1 h-4 w-4" />
+                打回选中
               </Button>
               <Button
                 variant="destructive"
@@ -700,6 +760,48 @@ const ReviewListPage: React.FC = () => {
           )}
         </CardContent>
       </Card>
+
+      {/* 批量打回意见弹窗 */}
+      <Dialog open={returnDialogOpen} onOpenChange={(open: boolean) => {
+        if (!returning) setReturnDialogOpen(open);
+      }}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>打回选中的 {selectedIds.size} 条记录</DialogTitle>
+            <DialogDescription>
+              打回后这些记录将变为「打回」状态，对应学生可按意见修改后重新提交。
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-2">
+            <label className="text-sm font-medium">
+              打回意见 <span className="text-destructive">*</span>
+            </label>
+            <Textarea
+              value={returnComment}
+              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setReturnComment(e.target.value)}
+              placeholder="请填写统一的打回意见，例如：部分证明材料缺失，请补充后重新提交"
+              rows={4}
+            />
+          </div>
+          <DialogFooter>
+            <Button
+              variant="outline"
+              onClick={() => setReturnDialogOpen(false)}
+              disabled={returning}
+            >
+              取消
+            </Button>
+            <Button
+              className="text-amber-600 hover:text-amber-700 border-amber-300 hover:bg-amber-50"
+              variant="outline"
+              onClick={handleBatchReturn}
+              disabled={returning || !returnComment.trim()}
+            >
+              {returning ? '正在打回...' : '确认打回'}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
