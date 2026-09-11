@@ -417,14 +417,23 @@ export class QualityEvalService {
         conditions.push(
           sql`(${statusExpr} = ${'needs_revision'} OR ${statusExpr} = ${'rejected'})`,
         );
+      } else if (statusFilter === 'pending') {
+        // 从未审查过的历史记录没有 review 字段（statusExpr 为 NULL），与显式 pending 同属「待审查」，口径需与状态卡片一致
+        conditions.push(sql`(${statusExpr} IS NULL OR ${statusExpr} = ${'pending'})`);
       } else {
         conditions.push(sql`${statusExpr} = ${statusFilter}`);
       }
     }
     if (reviewStatuses && reviewStatuses.length > 0) {
-      conditions.push(
-        sql`${statusExpr} = ANY(ARRAY[${sql.join(reviewStatuses.map((s: string) => sql`${s}`), sql`, `)}]::text[])`,
-      );
+      const statusArr = sql`ARRAY[${sql.join(
+        reviewStatuses.map((s: string) => sql`${s}`),
+        sql`, `,
+      )}]::text[]`;
+      if (reviewStatuses.includes('pending')) {
+        conditions.push(sql`(${statusExpr} = ANY(${statusArr}) OR ${statusExpr} IS NULL)`);
+      } else {
+        conditions.push(sql`${statusExpr} = ANY(${statusArr})`);
+      }
     }
     return conditions;
   }
@@ -822,18 +831,14 @@ export class QualityEvalService {
 
     // 单条 SQL 批量打回：用 jsonb_set 只覆盖 review、保留每条原有数据，并重置学生本轮重交机会；
     // 避免逐条 select+update 串行在大批量（一键全选）时超过前端请求超时
-    await this.db.execute(sql`
-      UPDATE ${qualityEvalRecords}
-      SET ${qualityEvalRecords.evalData} = jsonb_set(
-            COALESCE(${qualityEvalRecords.evalData}, '{}'::jsonb),
-            '{review}',
-            ${reviewPayload}::jsonb,
-            true
-          ),
-          ${qualityEvalRecords.resubmitted} = false,
-          ${qualityEvalRecords.updatedAt} = now()
-      WHERE ${qualityEvalRecords.id} = ANY(${ids}::uuid[])
-    `);
+    await this.db
+      .update(qualityEvalRecords)
+      .set({
+        evalData: sql`jsonb_set(COALESCE(${qualityEvalRecords.evalData}, '{}'::jsonb), '{review}', ${reviewPayload}::jsonb, true)`,
+        resubmitted: false,
+        updatedAt: sql`now()`,
+      } as unknown as Partial<QualityEvalInsert>)
+      .where(inArray(qualityEvalRecords.id, ids));
 
     if (options?.operatorStudentId && options?.operatorRole) {
       for (const row of rows) {
@@ -1269,14 +1274,23 @@ export class QualityEvalService {
         conditions.push(
           sql`(${statusExpr} = ${'needs_revision'} OR ${statusExpr} = ${'rejected'})`,
         );
+      } else if (statusFilter === 'pending') {
+        // 从未审查过的历史记录没有 review 字段（statusExpr 为 NULL），与显式 pending 同属「待审查」，口径需与状态卡片一致
+        conditions.push(sql`(${statusExpr} IS NULL OR ${statusExpr} = ${'pending'})`);
       } else {
         conditions.push(sql`${statusExpr} = ${statusFilter}`);
       }
     }
     if (reviewStatuses && reviewStatuses.length > 0) {
-      conditions.push(
-        sql`${statusExpr} = ANY(ARRAY[${sql.join(reviewStatuses.map((s: string) => sql`${s}`), sql`, `)}]::text[])`,
-      );
+      const statusArr = sql`ARRAY[${sql.join(
+        reviewStatuses.map((s: string) => sql`${s}`),
+        sql`, `,
+      )}]::text[]`;
+      if (reviewStatuses.includes('pending')) {
+        conditions.push(sql`(${statusExpr} = ANY(${statusArr}) OR ${statusExpr} IS NULL)`);
+      } else {
+        conditions.push(sql`${statusExpr} = ANY(${statusArr})`);
+      }
     }
 
     const whereClause =
