@@ -11,7 +11,9 @@ import { diskStorage } from 'multer';
 import { extname, join } from 'path';
 import { existsSync, mkdirSync } from 'fs';
 
-const UPLOAD_DIR = join(process.cwd(), 'uploads');
+// 上传目录：优先使用环境变量 UPLOAD_DIR（Railway 持久化卷挂载路径），
+// 未配置时回退到项目下的 uploads 目录，保证本地开发可用。
+const UPLOAD_DIR = process.env.UPLOAD_DIR || join(process.cwd(), 'uploads');
 
 // 确保上传目录存在
 if (!existsSync(UPLOAD_DIR)) {

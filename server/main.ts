@@ -19,8 +19,8 @@ async function bootstrap() {
   // 启用 CORS
   app.enableCors();
 
-  // 提供上传文件静态资源
-  const uploadsDir = join(process.cwd(), 'uploads');
+  // 提供上传文件静态资源；目录与上传控制器保持一致，支持 UPLOAD_DIR 环境变量（持久化卷）
+  const uploadsDir = process.env.UPLOAD_DIR || join(process.cwd(), 'uploads');
   if (!fs.existsSync(uploadsDir)) {
     fs.mkdirSync(uploadsDir, { recursive: true });
   }
