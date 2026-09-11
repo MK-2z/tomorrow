@@ -61,6 +61,35 @@ export async function getQualityEvalList(params: {
   }
 }
 
+export async function getAllQualityEvalIds(params: {
+  keyword?: string;
+  studentId?: string;
+  studentName?: string;
+  className?: string;
+  reviewStatus?: string;
+  studentIds?: string[];
+  studentNames?: string[];
+  classNames?: string[];
+  reviewStatuses?: string[];
+}): Promise<string[]> {
+  try {
+    const res = await axiosForBackend.get<ApiResponse<{ ids: string[]; total: number }>>(
+      '/api/quality-eval/all-ids',
+      {
+        params,
+        headers: getAuthHeaders(),
+      },
+    );
+    if (!res.data?.success || !res.data.data) {
+      throw new Error(res.data?.message || '获取全部记录失败');
+    }
+    return res.data.data.ids;
+  } catch (error) {
+    logger.error('获取全部评价记录ID失败', error);
+    throw error;
+  }
+}
+
 export async function getColumnValues(field: string, keyword?: string): Promise<string[]> {
   try {
     const res = await axiosForBackend.get<ApiResponse<{ values: string[] }>>(

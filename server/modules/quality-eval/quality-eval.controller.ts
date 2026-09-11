@@ -143,6 +143,43 @@ export class QualityEvalController {
      return { success: true, data, message: 'ok' };
    }
 
+   @Get('all-ids')
+   async allIds(
+     @Query('keyword') keyword?: string,
+     @Query('studentId') studentId?: string,
+     @Query('studentName') studentName?: string,
+     @Query('className') className?: string,
+     @Query('reviewStatus') reviewStatus?: string,
+     @Query('studentIds') studentIdsRaw?: string | string[],
+     @Query('studentNames') studentNamesRaw?: string | string[],
+     @Query('classNames') classNamesRaw?: string | string[],
+     @Query('reviewStatuses') reviewStatusesRaw?: string | string[],
+     @Headers('x-user-role') operatorRole?: string,
+   ): Promise<ApiResponse<{ ids: string[]; total: number }>> {
+     if (!isAdminOrAbove(operatorRole ?? '')) {
+       throw new ForbiddenException('无权限获取全部记录');
+     }
+
+     function parseArray(raw: string | string[] | undefined): string[] | undefined {
+       if (raw === undefined) return undefined;
+       const arr = Array.isArray(raw) ? raw : raw.split(',').filter(Boolean);
+       return arr.length > 0 ? arr : undefined;
+     }
+
+     const ids = await this.qualityEvalService.findAllIds({
+       keyword,
+       studentId,
+       studentName,
+       className,
+       reviewStatus: reviewStatus as ReviewStatus | 'returned' | undefined,
+       studentIds: parseArray(studentIdsRaw),
+       studentNames: parseArray(studentNamesRaw),
+       classNames: parseArray(classNamesRaw),
+       reviewStatuses: parseArray(reviewStatusesRaw),
+     });
+     return { success: true, data: { ids, total: ids.length }, message: 'ok' };
+   }
+
    @Get('column-values')
    async columnValues(
      @Query('field') field?: string,

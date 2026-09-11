@@ -256,66 +256,10 @@ export class QualityEvalService {
     classNames?: string[];
     reviewStatuses?: string[];
   }): Promise<QualityEvalListResponse> {
-    const {
-      page,
-      pageSize,
-      keyword,
-      studentId,
-      studentName,
-      className: classFilter,
-      reviewStatus: statusFilter,
-      sortField,
-      sortOrder,
-      studentIds,
-      studentNames,
-      classNames,
-      reviewStatuses,
-    } = params;
+    const { page, pageSize, sortField, sortOrder } = params;
 
-    const conditions = [];
-    if (keyword) {
-      const kw = `%${keyword}%`;
-      conditions.push(
-        or(
-          ilike(qualityEvalRecords.studentId, kw),
-          ilike(qualityEvalRecords.studentName, kw),
-          ilike(qualityEvalRecords.className, kw),
-        ),
-      );
-    }
-    if (studentId) {
-      conditions.push(ilike(qualityEvalRecords.studentId, `%${studentId}%`));
-    }
-    if (studentName) {
-      conditions.push(ilike(qualityEvalRecords.studentName, `%${studentName}%`));
-    }
-    if (classFilter) {
-      conditions.push(ilike(qualityEvalRecords.className, `%${classFilter}%`));
-    }
-    if (studentIds && studentIds.length > 0) {
-      conditions.push(inArray(qualityEvalRecords.studentId, studentIds));
-    }
-    if (studentNames && studentNames.length > 0) {
-      conditions.push(inArray(qualityEvalRecords.studentName, studentNames));
-    }
-    if (classNames && classNames.length > 0) {
-      conditions.push(inArray(qualityEvalRecords.className, classNames));
-    }
+    const conditions = this.buildListConditions(params);
     const statusExpr = sql`(${qualityEvalRecords.evalData}->'review'->>'status')::text`;
-    if (statusFilter) {
-      if (statusFilter === 'returned') {
-        conditions.push(
-          sql`(${statusExpr} = ${'needs_revision'} OR ${statusExpr} = ${'rejected'})`,
-        );
-      } else {
-        conditions.push(sql`${statusExpr} = ${statusFilter}`);
-      }
-    }
-    if (reviewStatuses && reviewStatuses.length > 0) {
-      conditions.push(
-        sql`${statusExpr} = ANY(ARRAY[${sql.join(reviewStatuses.map((s: string) => sql`${s}`), sql`, `)}]::text[])`,
-      );
-    }
 
     const whereClause =
       conditions.length > 0 ? and(...conditions) : undefined;
@@ -409,6 +353,102 @@ export class QualityEvalService {
       pageSize,
       stats,
     };
+  }
+
+  /**
+   * 构建列表筛选条件（list 与 findAllIds 共用，保证筛选口径一致）。
+   */
+  private buildListConditions(params: {
+    keyword?: string;
+    studentId?: string;
+    studentName?: string;
+    className?: string;
+    reviewStatus?: ReviewStatus | 'returned';
+    studentIds?: string[];
+    studentNames?: string[];
+    classNames?: string[];
+    reviewStatuses?: string[];
+  }) {
+    const {
+      keyword,
+      studentId,
+      studentName,
+      className: classFilter,
+      reviewStatus: statusFilter,
+      studentIds,
+      studentNames,
+      classNames,
+      reviewStatuses,
+    } = params;
+
+    const conditions: any[] = [];
+    if (keyword) {
+      const kw = `%${keyword}%`;
+      conditions.push(
+        or(
+          ilike(qualityEvalRecords.studentId, kw),
+          ilike(qualityEvalRecords.studentName, kw),
+          ilike(qualityEvalRecords.className, kw),
+        ),
+      );
+    }
+    if (studentId) {
+      conditions.push(ilike(qualityEvalRecords.studentId, `%${studentId}%`));
+    }
+    if (studentName) {
+      conditions.push(ilike(qualityEvalRecords.studentName, `%${studentName}%`));
+    }
+    if (classFilter) {
+      conditions.push(ilike(qualityEvalRecords.className, `%${classFilter}%`));
+    }
+    if (studentIds && studentIds.length > 0) {
+      conditions.push(inArray(qualityEvalRecords.studentId, studentIds));
+    }
+    if (studentNames && studentNames.length > 0) {
+      conditions.push(inArray(qualityEvalRecords.studentName, studentNames));
+    }
+    if (classNames && classNames.length > 0) {
+      conditions.push(inArray(qualityEvalRecords.className, classNames));
+    }
+    const statusExpr = sql`(${qualityEvalRecords.evalData}->'review'->>'status')::text`;
+    if (statusFilter) {
+      if (statusFilter === 'returned') {
+        conditions.push(
+          sql`(${statusExpr} = ${'needs_revision'} OR ${statusExpr} = ${'rejected'})`,
+        );
+      } else {
+        conditions.push(sql`${statusExpr} = ${statusFilter}`);
+      }
+    }
+    if (reviewStatuses && reviewStatuses.length > 0) {
+      conditions.push(
+        sql`${statusExpr} = ANY(ARRAY[${sql.join(reviewStatuses.map((s: string) => sql`${s}`), sql`, `)}]::text[])`,
+      );
+    }
+    return conditions;
+  }
+
+  /**
+   * 按当前筛选条件返回全部匹配记录的 ID（用于管理员一键跨页全选，只查 ID 字段，轻量）。
+   */
+  async findAllIds(params: {
+    keyword?: string;
+    studentId?: string;
+    studentName?: string;
+    className?: string;
+    reviewStatus?: ReviewStatus | 'returned';
+    studentIds?: string[];
+    studentNames?: string[];
+    classNames?: string[];
+    reviewStatuses?: string[];
+  }): Promise<string[]> {
+    const conditions = this.buildListConditions(params);
+    const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
+    const rows = await this.db
+      .select({ id: qualityEvalRecords.id })
+      .from(qualityEvalRecords)
+      .where(whereClause);
+    return rows.map((r: { id: string }) => r.id);
   }
 
   async getDistinctColumnValues(field: string, keyword?: string): Promise<string[]> {

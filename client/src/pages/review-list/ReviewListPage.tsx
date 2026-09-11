@@ -134,6 +134,7 @@ const ReviewListPage: React.FC = () => {
   const [returning, setReturning] = useState(false);
   const [returnDialogOpen, setReturnDialogOpen] = useState(false);
   const [returnComment, setReturnComment] = useState('');
+  const [selectingAll, setSelectingAll] = useState(false);
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [stats, setStats] = useState({ all: 0, pending: 0, approved: 0, returned: 0 });
 
@@ -425,11 +426,18 @@ const ReviewListPage: React.FC = () => {
   };
 
   const toggleSelectAll = () => {
-    if (selectedIds.size === items.length && items.length > 0) {
-      setSelectedIds(new Set());
-    } else {
-      setSelectedIds(new Set(items.map((r: QualityEvalRecord) => r.id)));
-    }
+    const currentPageIds = items.map((r: QualityEvalRecord) => r.id);
+    const allCurrentSelected =
+      currentPageIds.length > 0 && currentPageIds.every((id: string) => selectedIds.has(id));
+    setSelectedIds((prev: Set<string>) => {
+      const next = new Set(prev);
+      if (allCurrentSelected) {
+        currentPageIds.forEach((id: string) => next.delete(id));
+      } else {
+        currentPageIds.forEach((id: string) => next.add(id));
+      }
+      return next;
+    });
   };
 
   const toggleSelectOne = (id: string) => {
@@ -442,6 +450,51 @@ const ReviewListPage: React.FC = () => {
       }
       return next;
     });
+  };
+
+  // 当前筛选条件（与列表查询口径一致，用于跨页全选）
+  const buildCurrentFilters = () => {
+    const filters: {
+      reviewStatus?: string;
+      studentIds?: string[];
+      studentNames?: string[];
+      classNames?: string[];
+      reviewStatuses?: string[];
+    } = {
+      reviewStatus: statusTab === 'all' ? undefined : statusTab,
+    };
+    if (columnFilters.studentId.length > 0) filters.studentIds = columnFilters.studentId;
+    if (columnFilters.studentName.length > 0) filters.studentNames = columnFilters.studentName;
+    if (columnFilters.className.length > 0) filters.classNames = columnFilters.className;
+    if (columnFilters.reviewStatus.length > 0) filters.reviewStatuses = columnFilters.reviewStatus;
+    return filters;
+  };
+
+  // 一键选中当前筛选条件下的全部记录（跨页）
+  const handleSelectAllEverywhere = async () => {
+    if (selectingAll) return;
+    setSelectingAll(true);
+    try {
+      const ids = await qualityEvalApi.getAllQualityEvalIds(buildCurrentFilters());
+      if (ids.length === 0) {
+        toast.info('当前筛选条件下没有可选择的记录');
+        return;
+      }
+      setSelectedIds(new Set(ids));
+      toast.success(`已选中全部 ${ids.length} 条记录（含其他页）`);
+    } catch (error: unknown) {
+      logger.error('一键全选失败', error);
+      const msg = error && typeof error === 'object' && 'message' in error
+        ? String((error as { message: unknown }).message)
+        : '一键全选失败';
+      toast.error(msg);
+    } finally {
+      setSelectingAll(false);
+    }
+  };
+
+  const handleClearSelection = () => {
+    setSelectedIds(new Set());
   };
 
   const handlePageChange = (newPage: number) => {
@@ -546,6 +599,46 @@ const ReviewListPage: React.FC = () => {
             })}
           </div>
 
+          {/* 选择工具条：一键跨页全选 */}
+          {isSuperAdmin && (
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
+              {selectedIds.size > 0 && (
+                <span className="text-muted-foreground">
+                  已选 <span className="font-medium text-foreground">{selectedIds.size}</span> 条
+                  {total > 0 ? ` / 共 ${total} 条` : ''}
+                </span>
+              )}
+              {total > 0 && selectedIds.size < total && (
+                <button
+                  type="button"
+                  onClick={handleSelectAllEverywhere}
+                  disabled={selectingAll}
+                  className="text-primary hover:underline disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  {selectingAll ? '正在全选...' : `一键全选全部 ${total} 条（含其他页）`}
+                </button>
+              )}
+              {total > 0 && selectedIds.size >= total && (
+                <button
+                  type="button"
+                  onClick={handleClearSelection}
+                  className="text-primary hover:underline"
+                >
+                  取消全选
+                </button>
+              )}
+              {selectedIds.size > 0 && selectedIds.size < total && (
+                <button
+                  type="button"
+                  onClick={handleClearSelection}
+                  className="text-muted-foreground hover:underline"
+                >
+                  清空选择
+                </button>
+              )}
+            </div>
+          )}
+
           {/* 表格 */}
           <div className="rounded-md border">
             <Table>
@@ -557,11 +650,18 @@ const ReviewListPage: React.FC = () => {
                         type="button"
                         onClick={toggleSelectAll}
                         className="flex h-4 w-4 items-center justify-center"
-                        title={selectedIds.size === items.length && items.length > 0 ? '取消全选' : '全选当前页'}
+                        title={
+                          items.length > 0 && items.every((r: QualityEvalRecord) => selectedIds.has(r.id))
+                            ? '取消选中本页'
+                            : '选中本页'
+                        }
                       >
                         <input
                           type="checkbox"
-                          checked={items.length > 0 && selectedIds.size === items.length}
+                          checked={
+                            items.length > 0 &&
+                            items.every((r: QualityEvalRecord) => selectedIds.has(r.id))
+                          }
                           onChange={toggleSelectAll}
                           className="h-4 w-4 cursor-pointer accent-primary"
                         />
